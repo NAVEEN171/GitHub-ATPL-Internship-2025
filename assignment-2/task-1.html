@@ -4,9 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hall Ticket</title>
-    <style></style>
+    <style>
+        .table-section{
+            width:90%;
+        }
+        body{
+            margin:0px;
+            padding:20px;
+        }
+        td{
+            text-align:left;
+        }
+        th{
+            text-align:right;
+        }
+        .hall-ticket-details{
+            display:flex;
+            width:100%;
+            border:1px solid black;
+            margin-top:130px;
+        }
+        *{
+            box-sizing: border-box;
+
+        }
+        .hall-ticket-preview{
+            border:1px solid black;
+            padding:10px;
+            
+        }
+        .exam-centre-details{
+            display:flex;
+            margin-top:30px;
+            align-items:center;
+            width:100%;
+            border:1px solid black
+        }
+        .subjects-table table {
+            width:100%;
+            margin-top:50px;
+        }
+        .subjects-table th {
+            text-align:center;
+        }
+         .subjects-table td {
+            padding-left:5px;
+        }
+      
+        .subjects-table  table,.subjects-table th ,.subjects-table td{
+             border: 1px solid black;
+             border-collapse: collapse;
+        }
+       
+    </style>
 </head>
 <body>
-    
+    <main class="hall-ticket-preview">
+        <section class="table-section">
+                <table>
+           
+            <tr>
+                <th>Roll No : </th>
+                <td>21KD1A04G9</td>
+            </tr>
+            <tr>
+                <th>Name : </th>
+                <td>S.Naveen Kumar</td>
+            </tr>
+            <tr>
+                <th>Father's Name : </th>
+                <td>Srinivasa Rao</td>
+            </tr>
+            <tr>
+                <th>Mother's Name : </th>
+                <td>Venkata Lakshmi</td>
+            </tr>
+           
+        </table>
+        </section>
+        <section class="hall-ticket-details">
+            <h3 style="width:50%;padding:4px;margin:0px;">Hall Ticket Download Date/Time - (24-03-2022 22:16:24)</h3>
+            <h3 style="width:50%;padding:4px;border-left:1px solid black;margin:0px;">IP Address -(106.211.10.254)</h3>
+        </section>
+        <section class="exam-centre-details">
+            <b style="padding:4px;">
+                Exam center address
+            </b>
+            <b style="border-left:1px solid black;padding:4px;">
+                <strong >38490324923</strong><br/>
+                <strong style="padding:4px;">Apex Junior College ,Vizianagaram,Vizianagaram District,535002</strong>
+            </b>
+        </section >
+        <section class="subjects-table">
+            <table >
+                <thead>
+            <tr>
+                <th>Subject Code</th>
+                <th style="width:60%;">Subject Name</th>
+                  <th>Date of Exam</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>312</td>
+                <td>312-Physics</td>
+                 <td>18-04-2022</td>
+            </tr>
+            <tr >
+                <td>313</td>
+                <td>313-Chemistry</td>
+                 <td>19-04-2022</td>
+            </tr>
+             <tr>
+                <td>302</td>
+                <td>302-English</td>
+                 <td>20-04-2022</td>
+            </tr>
+             <tr>
+                <td>311</td>
+                <td>311-Mathematics</td>
+                 <td>21-04-2022</td>
+            </tr>
+             <tr>
+                <td>330</td>
+                <td>330-Computer Science</td>
+                 <td>22-04-2022</td>
+            </tr>
+            </tbody>
+        </table>
+        </section>
+    </main>
 </body>
 </html>
