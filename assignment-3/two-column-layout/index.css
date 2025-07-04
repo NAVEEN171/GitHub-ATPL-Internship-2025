@@ -1,13 +1,18 @@
-
-aside{
-    display:inline-block;
-    padding:10px;
-  
+body{
+    margin:0px;
+    padding:0px;
 }
 
 *{
     box-sizing: border-box;
 }
+
+aside{
+    display:inline-block;
+    padding:10px; 
+    margin-top:10px;
+}
+
 
 .left-column{
     width:30%;
