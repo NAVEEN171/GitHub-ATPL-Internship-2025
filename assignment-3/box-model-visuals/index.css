@@ -13,6 +13,11 @@
     margin:0px;
     padding:0px;
 }
+.line{
+    height:2px;
+    color:gray;
+    width:100%;
+}
 
 .Content-model{
     width:400px;
