@@ -1,0 +1,74 @@
+ul {
+  list-style: none;
+  padding-left:0px;
+}
+
+ul li:before {
+  content: '✓';
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    border:0;
+}
+
+li{
+    font-size: 1.1rem;
+}
+
+.subscribe{
+    background-color: rgb(163, 83, 237);
+    color:white;
+    padding:10px 15px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:500;
+    border-radius:5px;
+}
+
+.header{
+    color:rgb(255, 64, 191);
+}
+
+.subscription-card:hover{
+      background-color: rgb(163, 83, 237);
+      color:white;
+      transform:scale(1.1);
+      .subscribe {
+        background-color: white;
+        color:rgb(163, 83, 237);
+      }
+      .header{
+        color:white;
+      }
+}
+
+
+.subscription-card{
+         display:flex;
+         flex-direction: column;
+         align-items:center;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+         width:fit-content;
+         justify-content: end;
+         padding:20px;
+         cursor:pointer;
+         height:fit-content;
+         border-radius: 8px;
+         width:calc((100% - 40px)/3);
+         transition: transform 0.3s ease-in-out;
+}
+
+.subscription-cards{
+    width:95%;
+    margin:0 auto;
+    padding-top:200px;
+    display:flex;
+    gap:10px;
+}

@@ -1,0 +1,25 @@
+
+aside{
+    display:inline-block;
+    padding:10px;
+  
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.left-column{
+    width:30%;
+    float:left;
+    border:3px solid red;
+    background-color: rgb(211, 141, 75);
+    
+}
+
+.right-column{
+    width:70%;
+    float:right;
+    border:3px solid green;
+    background-color: rgb(180, 226, 180);
+}

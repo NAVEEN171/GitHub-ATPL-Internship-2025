@@ -1,0 +1,35 @@
+.Box-model{
+    width:400px;
+    height:150px;
+    background-color: rgb(156, 156, 221);
+    padding:10px;
+    border:5px solid rgb(202, 202, 102);
+    margin:10px ;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+.body{
+    margin:0px;
+    padding:0px;
+}
+
+.Content-model{
+    width:400px;
+    height:150px;
+    background-color: rgb(156, 156, 221);
+    padding:10px;
+    border:5px solid rgb(202, 202, 102);
+    margin:10px ;
+    box-sizing: content-box;
+    text-align:center;
+}
+
+.main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    width:100%;
+}
