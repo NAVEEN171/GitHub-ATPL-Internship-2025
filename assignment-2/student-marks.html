@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Form</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+      }
+      table {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <form>
+        <label>Student : </label>
+        <select name="name" required>
+          <option value="">--select--</option>
+          <option value="Dileep">Dileep</option>
+          <option value="Naveen">Naveen</option>
+          <option value="Mahesh">Mahesh</option>
+          <option value="Gnanesh">Gnanesh</option>
+        </select>
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Marks (out of 100)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Maths</td>
+              <td><input type="number" name="Maths" max="100" required /></td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td><input type="number" max="100" name="Science" required /></td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td><input type="number" max="100" name="English" required /></td>
+            </tr>
+            <tr>
+              <td>History</td>
+              <td><input type="number" max="100" name="History" required /></td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" style="margin-top: 10px">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
