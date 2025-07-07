@@ -1,77 +1,78 @@
-
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-
 ul {
   list-style: none;
-  padding-left:0px;
+  padding-left: 0px;
 }
-
 ul li:before {
-  content: '✓';
-  padding-right:5px;
+  content: "✓";
+  padding-right: 5px;
+  color: #22c55e;
+  font-weight: bold;
+}
+body {
+  margin: 0;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+li {
+  font-size: 1.1rem;
 }
 
-body{
-    margin:0;
-    border:0;
+.subscribe {
+  background-color: rgb(163, 83, 237);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
 }
-
-li{
-    font-size: 1.1rem;
+.header {
+  color: rgb(255, 64, 191);
 }
-
-.subscribe{
-    background-color: rgb(163, 83, 237);
-    color:white;
-    padding:10px 15px;
-    border:none;
-    outline:none;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:500;
-    border-radius:5px;
+.subscription-card:hover {
+  background: rgb(163, 83, 237);
+  color: white;
+  transform: scale(1.1);
+  .subscribe {
+    background-color: white;
+    color: rgb(163, 83, 237);
+  }
+  .header {
+    color: white;
+  }
+  ul li:before {
+    color: white;
+  }
 }
-
-.header{
-    color:rgb(255, 64, 191);
+.subscription-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.subscription-card:hover{
-      background-color: rgb(163, 83, 237);
-      color:white;
-      transform:scale(1.1);
-      .subscribe {
-        background-color: white;
-        color:rgb(163, 83, 237);
-      }
-      .header{
-        color:white;
-      }
+.subscription-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 350px;
+  background: linear-gradient(to bottom right, white 95%, #a8d6f2 5%);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: calc((100% - 20px) / 3);
+  transition: transform 0.3s ease-in-out;
 }
-
-
-.subscription-card{
-         display:flex;
-         flex-direction: column;
-         align-items:center;
-         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-         width:fit-content;
-         justify-content: end;
-         padding:20px;
-         cursor:pointer;
-         height:fit-content;
-         border-radius: 8px;
-         width:calc((100% - 40px)/3);
-         transition: transform 0.3s ease-in-out;
-}
-
-.subscription-cards{
-    width:95%;
-    margin:0 auto;
-    padding-top:200px;
-    display:flex;
-    gap:10px;
+.subscription-cards {
+  max-width:1400px;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 200px;
+  display: flex;
+  gap: 10px;
 }
