@@ -1,0 +1,29 @@
+.navbar {
+  background-color: #37474f;
+  height: 50px;
+  color: white;
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+   font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: sans-serif;
+}
+ a {
+  color: #cfd8dc;
+  text-decoration: none;
+   padding:10px 25px;
+}
+
+a:hover {
+  background-color: #f45c18;
+  cursor: pointer;
+ color:white;
+}
