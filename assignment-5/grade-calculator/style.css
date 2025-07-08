@@ -1,0 +1,16 @@
+main{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    gap:5px;
+}
+button{
+    width:fit-content;
+}
+
+.pass{
+    color:rgb(30, 192, 30);
+}
+.fail{
+    color:rgb(247, 60, 60);
+}
