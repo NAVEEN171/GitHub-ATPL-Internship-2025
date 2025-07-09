@@ -28,17 +28,21 @@ function submitHandler(e) {
   for (Item of Inputs) {
     let num = parseInt(Item.value);
     totalMarks += num;
-    let grade = gradingSystem(num);
-    let text = Item.name + " -  " + grade;
+  }
+  
+  avg = totalMarks / Inputs.length;
+   
+  
+    let grade = gradingSystem(avg);
+    
     let tag = document.createElement("h1");
     if (grade !== "F") {
       tag.classList.add("pass");
+      tag.innerHTML =  `Grade - ${grade} <br/> you cleared the exam !`;
     } else {
       tag.classList.add("fail");
+        tag.innerHTML =  `Grade - ${grade} <br/> you Failed In Exam !`;
     }
-    tag.innerText = text;
+   
     Section.appendChild(tag);
-  }
-
-  avg = totalMarks / Inputs.length;
 }
