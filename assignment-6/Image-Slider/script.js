@@ -26,16 +26,18 @@ absdiv2.innerText=">"
 absdiv1.classList.add("lt");
 absdiv2.classList.add("gt");
 section.appendChild(absdiv1);
-section.appendChild(absdiv2)
+section.appendChild(absdiv2);
 let currentSlide=0;
 let intervalID=null;
+
+absdiv1.addEventListener("click",()=>{
+    prevSlide();
+})
 
 absdiv2.addEventListener("click",()=>{
     nextSlide();
 })
-absdiv1.addEventListener("click",()=>{
-    prevSlide();
-})
+
 
 
 function nextSlide(){
