@@ -2,7 +2,7 @@ const users = [
   { name: "John", age: 25 },
   { name: "Rita", age: 22 },
   { name: "Sam", age: 30 },
-  {name:"Mahesh",age:21}
+ 
 ];
 
 
