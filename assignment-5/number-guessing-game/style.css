@@ -1,0 +1,46 @@
+section {
+  color: white;
+  height: 70vh;
+  width: 100%;
+  background-color: black;
+  margin-top: 10px;
+  padding: 10px;
+  overflow-y: auto;
+}
+* {
+  box-sizing: border-box;
+}
+.pass {
+  color: rgb(30, 192, 30);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+}
+main {
+  padding: 20px;
+}
+.input-line{
+  display:flex;
+  gap:4px; 
+}
+input{
+  width:calc(100% -  27px);
+  background-color: black;
+  outline:none;
+  border:none;
+  color:white;
+}
+
+h2{
+  text-align: center;
+}
+
+ input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+ }

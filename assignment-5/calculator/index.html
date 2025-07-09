@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script src="script.js" defer ></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
     <main>
-        <section class="Calculator">
-            <input type="text" id="text-tab" pattern="[0-9+-/*]" value="0"  oninput="InputChange(event)" />
-            <div>
-                <button onclick="inputSymbol(`+`)">+</button>
-                <button onclick="inputSymbol(`-`)">-</button>
-                <button onclick="inputSymbol(`*`)">*</button>
-                <button onclick="inputSymbol(`/`)">/</button>
-                <button onclick="Submit()">=</button>
-            </div>
-
-        </section>
+      <section class="Calculator">
+        <h1 class="calculator-Heading">Calculator</h1>
+        <input
+          class="calculator-Input"
+          type="text"
+          id="text-tab"
+          value="0"
+          oninput="InputChange(event)"
+        />
+        <div class="btns-container">
+          <button onclick="inputSymbol(`+`)">+</button>
+          <button onclick="inputSymbol(`-`)">-</button>
+          <button onclick="inputSymbol(`*`)">*</button>
+          <button onclick="inputSymbol(`/`)">/</button>
+          <button onclick="Submit()">=</button>
+        </div>
+      </section>
     </main>
-    
-    
-</body>
+  </body>
 </html>

@@ -8,16 +8,17 @@
     <script src="script.js" defer ></script>
 </head>
 <body>
-    <main >
+    <form id="gradeForm">
+      <h1>Check Grades:</h1>
         
-      <div>English: <input type="number" required max="100" min="0" name="English"></input></div>
-      <div>Maths: <input type="number" required max="100" min="0" name="Maths"></input></div>
-      <div>Science: <input type="number" required max="100" min="0" name="Science"></input></div>       
-      <div>Physical Education: <input type="number" max="100" min="0" name="Physical Education" required></input></div>
-      <div>Social : <input type="number" max="100" min="0" required name="Social" ></input></div>
-      <button  onclick="submitHandler()">Submit</button>
+      <div><p>English: </p> <input type="number" required max="100" min="0" name="English"></input></div>
+      <div><p>Maths:</p> <input type="number" required max="100" min="0" name="Maths"></input></div>
+      <div><p>Science:</p> <input type="number" required max="100" min="0" name="Science"></input></div>       
+      <div><p>Physical Education:</p> <input type="number" max="100" min="0" name="Physical Education" required></input></div>
+      <div><p>Social : </p><input type="number" max="100" min="0" required name="Social" ></input></div>
+      <button type="submit" onclick="submitHandler(e)">Submit</button>
       <section></section>
-    </main>
+    </form>
     
     
 </body>
