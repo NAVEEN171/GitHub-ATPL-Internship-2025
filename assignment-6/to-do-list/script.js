@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="status-dot"></span>
         <span class="task-text">${task.text}</span>
         <div class="task-actions">
-          <button class="complete-btn" ${
-            task.completed ? "disabled" : ""
-          }>✓</button>
+          <button class="complete-btn" >${task.completed ? "↶" : "✓"}</button>
           <button class="delete-btn">X</button>
         </div>
       `;
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function turnComplete(id) {
     const taskIndex = tasks.findIndex((task) => task.id === id);
     if (taskIndex > -1) {
-      tasks[taskIndex].completed = true;
+      tasks[taskIndex].completed = !tasks[taskIndex].completed;
       saveTasks();
       renderTasks();
     }
