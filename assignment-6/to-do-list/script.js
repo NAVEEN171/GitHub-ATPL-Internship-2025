@@ -59,6 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (taskText === "") {
       return;
     }
+    if (tasks.some((task) => task.text === taskText)) {
+      alert("You Already  have this task on list!");
+      return;
+    }
 
     const newTask = {
       id: Date.now(),
