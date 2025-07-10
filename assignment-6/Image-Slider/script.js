@@ -1,81 +1,79 @@
-const productImages=[
-    "https://m.media-amazon.com/images/I/71z-1j187cL._SL1500_.jpg",
-    "https://m.media-amazon.com/images/I/71-6roO29AL._SL1500_.jpg",
-    "https://m.media-amazon.com/images/I/71jG+e7roXL._SL1500_.jpg",
-    "https://i.huffpost.com/gen/1105939/images/o-BEST-PERFORMING-WINDOWS-LAPTOP-facebook.jpg"
-]
+const productImages = [
+  "https://m.media-amazon.com/images/I/71z-1j187cL._SL1500_.jpg",
+  "https://m.media-amazon.com/images/I/71-6roO29AL._SL1500_.jpg",
+  "https://m.media-amazon.com/images/I/71jG+e7roXL._SL1500_.jpg",
+  "https://i.huffpost.com/gen/1105939/images/o-BEST-PERFORMING-WINDOWS-LAPTOP-facebook.jpg",
+];
 
-let section=document.querySelector("section");
-let divtag1=document.createElement("div");
-divtag1.classList.add("Image-wrapper")
+let section = document.querySelector("section");
+let imagesWrapper = document.createElement("div");
+imagesWrapper.classList.add("Image-wrapper");
 
-for(url of productImages){
-       let divtag=document.createElement("div");
-       let imgTag=document.createElement("img");
-       imgTag.src=url;
-       divtag.appendChild(imgTag);
-       divtag.classList.add("card");
-       divtag1.appendChild(divtag);
+for (url of productImages) {
+  let card = document.createElement("div");
+  let imgTag = document.createElement("img");
+  imgTag.src = url;
+  card.appendChild(imgTag);
+  card.classList.add("card");
+  imagesWrapper.appendChild(card);
 }
 
-section.append(divtag1);
-let absdiv1=document.createElement("button");
-absdiv1.innerText="<"
-let absdiv2=document.createElement("button");
-absdiv2.innerText=">"
-absdiv1.classList.add("lt");
-absdiv2.classList.add("gt");
-section.appendChild(absdiv1);
-section.appendChild(absdiv2);
-let currentSlide=0;
-let intervalID=null;
+section.append(imagesWrapper);
+let leftArrowBtn = document.createElement("button");
+leftArrowBtn.innerText = "<";
+let rightArrowBtn = document.createElement("button");
+rightArrowBtn.innerText = ">";
+leftArrowBtn.classList.add("lt");
+rightArrowBtn.classList.add("gt");
+section.appendChild(leftArrowBtn);
+section.appendChild(rightArrowBtn);
+let currentSlide = 0;
+let intervalID = null;
 
-absdiv1.addEventListener("click",()=>{
-    prevSlide();
-})
+leftArrowBtn.addEventListener("click", () => {
+  prevSlide();
+});
 
-absdiv2.addEventListener("click",()=>{
+rightArrowBtn.addEventListener("click", () => {
+  nextSlide();
+});
+
+function nextSlide() {
+  currentSlide += 1;
+  currentSlide = currentSlide % productImages.length;
+  let imagesWrapper = document.querySelector(".Image-wrapper");
+  imagesWrapper.style.translate = `${-100 * currentSlide}% `;
+  endInterval();
+  startInterval();
+}
+
+function prevSlide() {
+  currentSlide--;
+  currentSlide =
+    currentSlide === -1
+      ? productImages.length - 1
+      : currentSlide % productImages.length;
+  let imagesWrapper = document.querySelector(".Image-wrapper");
+  imagesWrapper.style.translate = `${-100 * currentSlide}% `;
+  endInterval();
+  startInterval();
+}
+
+let startInterval = () => {
+  intervalID = setInterval(() => {
     nextSlide();
-})
+  }, 3000);
+};
 
-
-
-function nextSlide(){
-    currentSlide+=1;
-   currentSlide=currentSlide%(productImages.length);
-   let divtag1=document.querySelector(".Image-wrapper");
-   divtag1.style.translate=`${-100*currentSlide}% `;
-     endInterval();
-   startInterval();
-}
-
-function prevSlide(){
-    currentSlide--;
-   currentSlide=currentSlide===-1?productImages.length-1:currentSlide%(productImages.length);
-   let divtag1=document.querySelector(".Image-wrapper");
-   divtag1.style.translate=`${-100*currentSlide}% `;
-   endInterval();
-   startInterval();
-}
-
-let startInterval=()=>{
-   intervalID= setInterval(()=>{
-    nextSlide();
-   
-},3000)
-}
-
-const endInterval=()=>{
-   clearInterval(intervalID);
-}
-
+const endInterval = () => {
+  clearInterval(intervalID);
+};
 
 startInterval();
 
-section.addEventListener("mouseover",()=>{
-    endInterval();
-})
-section.addEventListener("mouseleave",()=>{
-    startInterval();
-})
-
+section.addEventListener("mouseover", () => {
+  endInterval();
+});
+section.addEventListener("mouseleave", () => {
+  startInterval();
+});

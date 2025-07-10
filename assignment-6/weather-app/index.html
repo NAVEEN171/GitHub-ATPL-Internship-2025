@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecaster</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Weather Forecaster</h1>
+
+      <div class="search-section">
+        <input
+          type="text"
+          id="cityInput"
+          class="search-input"
+          placeholder="Enter city or town name..."
+        />
+        <button id="searchBtn" class="search-btn">Search</button>
+      </div>
+
+      <div class="quick-select">
+        <h3>Quick Select:</h3>
+        <div class="city-buttons">
+          <button class="city-btn" data-city="Vizag">Vizag</button>
+          <button class="city-btn" data-city="Vizianagaram">
+            Vizianagaram
+          </button>
+        </div>
+      </div>
+
+      <div id="weatherResult" class="weather-result hidden">
+        <div class="weather-card">
+          <div class="city-name"></div>
+          <div class="temperature"></div>
+          <div class="description"></div>
+          <div class="details">
+            <div class="detail-item">
+              <span class="label">Feels like:</span>
+              <span class="feels-like"></span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Humidity:</span>
+              <span class="humidity"></span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Wind Speed:</span>
+              <span class="wind-speed"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <p>Loading...</p>
+      </div>
+
+      <div id="error" class="error hidden">
+        <p>City not found. Please try again.</p>
+      </div>
+    </div>
+  </body>
+</html>
