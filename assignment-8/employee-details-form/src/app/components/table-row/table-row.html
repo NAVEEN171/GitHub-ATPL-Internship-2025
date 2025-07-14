@@ -1,0 +1,48 @@
+<td>{{ tempEmployee.employeeId }}</td>
+
+@if(!isEditing()){
+<td>{{ tempEmployee.employeeName }}</td>
+} @else {
+<td>
+  <input
+    [value]="tempEmployee.employeeName"
+    [(ngModel)]="tempEmployee.employeeName"
+    type="text"
+  />
+</td>
+} @if(!isEditing()){
+<td>{{ tempEmployee.email }}</td>
+} @else {
+<td>
+  <input
+    [value]="tempEmployee.email"
+    [(ngModel)]="tempEmployee.email"
+    type="text"
+  />
+</td>
+} @if(!isEditing()){
+<td>{{ tempEmployee.department }}</td>
+} @else {
+<td>
+  <input
+    [value]="tempEmployee.department"
+    [(ngModel)]="tempEmployee.department"
+    type="text"
+  />
+</td>
+}
+
+<td class="action-buttons">
+  @if(!isEditing()){
+  <button (click)="allowToggleEditing()" class="edit-btn">Edit</button>
+  <button
+    (click)="onDeleteEmployee(tempEmployee.employeeId)"
+    class="delete-btn"
+  >
+    Delete
+  </button>
+  } @else{
+  <button (click)="onSaveChanges()" class="edit-btn">Save</button>
+  <button (click)="onCancelEmployeeChanges()" class="delete-btn">Cancel</button>
+  }
+</td>

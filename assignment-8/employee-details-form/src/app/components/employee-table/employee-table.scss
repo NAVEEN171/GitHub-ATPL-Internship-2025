@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as *;
 
 table,
 th,
@@ -16,6 +16,16 @@ td {
   font-size: 1.1rem;
   font-weight: 500;
 }
+tbody {
+  background-color: rgb(227, 224, 224);
+  tr {
+    &:hover {
+      background-color: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
 
 .employee-table-title {
   text-align: center;
@@ -29,17 +39,6 @@ thead {
   color: white;
   border-radius: 10px;
 }
-tbody {
-  background-color: rgb(227, 224, 224);
-  tr {
-    &:hover {
-      background-color: #2563eb;
-      color: white;
-      cursor: pointer;
-    }
-  }
-}
-
 .employee-table-container {
   display: flex;
   flex-direction: column;

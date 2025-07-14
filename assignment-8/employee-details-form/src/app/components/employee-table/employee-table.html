@@ -7,18 +7,15 @@
         <th>Name</th>
         <th>email Address</th>
         <th>Department</th>
+        <th rolspan="2">Actions</th>
       </tr>
     </thead>
+
     <tbody>
       @if(!employeeDetails.length){
       <div>No Employees Record !</div>
       } @else { @for(employee of employeeDetails;track employee.employeeId){
-      <tr>
-        <td>{{ employee.employeeId }}</td>
-        <td>{{ employee.employeeName }}</td>
-        <td>{{ employee.email }}</td>
-        <td>{{ employee.department }}</td>
-      </tr>
+      <tr app-table-row [employee]="employee"></tr>
       } }
     </tbody>
   </table>
