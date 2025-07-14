@@ -1,10 +1,10 @@
 type StringNumber = string | number;
 
-function formatValue(value: StringNumber): string {
+function formatValue<T>(value: T): StringNumber {
   if (typeof value === "number") {
-    return (value * value).toString().trim();
+    return value * value;
   } else if (typeof value === "string") {
-    return value.toUpperCase();
+    return value;
   }
   return "";
 }

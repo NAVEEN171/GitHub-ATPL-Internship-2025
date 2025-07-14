@@ -1,0 +1,49 @@
+<section class="user-form-container">
+  <form
+    class="user-form"
+    #userGreeting="ngForm"
+    (ngSubmit)="onSubmit(userGreeting)"
+  >
+    <h1>User Greeting</h1>
+    <label for="age">age:</label>
+    <input
+      [(ngModel)]="userData.age"
+      type="number"
+      min="1"
+      max="100"
+      id="age"
+      name="age"
+      #age="ngModel"
+      placeholder="enter age"
+      required
+    />
+    @if(age?.dirty || age?.touched){ @if(age?.errors?.['required']){
+    <div class="error">email is required</div>
+    } @if(age.errors?.['min']){
+    <div class="error">minimum age should be greater than 0!</div>
+    } @if(age.errors?.['max']){
+    <div class="error">maximum age should be less than 101!</div>
+    } }
+    <label for="userName">Name:</label>
+
+    <input
+      id="userName"
+      minlength="3"
+      name="userName"
+      #userName="ngModel"
+      [(ngModel)]="userData.userName"
+      type="text"
+      placeholder="enter name"
+      required
+    />
+    @if(userName?.dirty || userName?.touched){
+    @if(userName?.errors?.['required']){
+    <div class="error">username is required</div>
+    } @if(userName?.errors?.['minlength']){
+    <div class="error">name should have atleast 3 characters!</div>
+    } }
+    <button class="submit-btn" [disabled]="!userGreeting.valid" type="submit">
+      Submit
+    </button>
+  </form>
+</section>

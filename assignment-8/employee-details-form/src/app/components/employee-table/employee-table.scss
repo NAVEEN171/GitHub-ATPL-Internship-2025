@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+
+table,
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  font-family: sans-serif;
+  border-collapse: collapse;
+}
+table {
+  box-shadow: $customShadow;
+}
+
+td {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.employee-table-title {
+  text-align: center;
+}
+.employee-table {
+  width: 80%;
+}
+
+thead {
+  background: #3296d7;
+  color: white;
+  border-radius: 10px;
+}
+tbody {
+  background-color: rgb(227, 224, 224);
+  tr {
+    &:hover {
+      background-color: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.employee-table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}

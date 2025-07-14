@@ -1,0 +1,86 @@
+<section class="employee-form-component">
+  <div class="employee-form-container">
+    <h1 class="header">Add Employee</h1>
+    <form
+      #employeeform="ngForm"
+      (ngSubmit)="onSubmit(employeeform)"
+      class="employee-form"
+    >
+      <label for="Employee ID">Employee Id: </label>
+      <input
+        type="number"
+        name="employeeId"
+        id="Employee ID"
+        #employeeId="ngModel"
+        [(ngModel)]="employeeDetails.employeeId"
+        required
+        min="1"
+      />
+
+      @if(employeeId?.dirty || employeeId?.touched){
+      @if(employeeId?.errors?.['required']){
+      <div class="error">employee Id is Required</div>
+      } @if(employeeId.errors?.['min']){
+      <div class="error">employee Id must be at least 3 characters long</div>
+      } }
+
+      <label for="Employee Name">Employee Name: </label>
+      <input
+        [(ngModel)]="employeeDetails.employeeName"
+        type="text"
+        name="employeeName"
+        #employeeName="ngModel"
+        id="employeeName"
+        required
+        minlength="4"
+      />
+      @if(employeeName?.dirty || employeeName?.touched){
+      @if(employeeName?.errors?.['required']){
+      <div class="error">employee name is Required</div>
+      } @if(employeeName.errors?.['minlength']){
+      <div class="error">employee name must be at least 4 characters long</div>
+      } }
+
+      <label for="Email">Email: </label>
+      <input
+        type="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        [(ngModel)]="employeeDetails.email"
+        name="email"
+        #email="ngModel"
+        id="Email"
+        required
+      />
+      @if(email?.dirty || email?.touched){ @if(email?.errors?.['required']){
+      <div class="error">email is required</div>
+      } @if(email.errors?.['pattern']){
+      <div class="error">enter valid email!</div>
+      } }
+
+      <label for="Department">Department: </label>
+      <input
+        type="text"
+        name="department"
+        id="department"
+        #department="ngModel"
+        [(ngModel)]="employeeDetails.department"
+        required
+      />
+      @if(department?.dirty || department?.touched){
+      @if(department?.errors?.['required']){
+      <div class="error">Department is required</div>
+      } }
+
+      <div class="employee-action-buttons">
+        <button
+          class="submit-btn"
+          [disabled]="!employeeform.valid"
+          type="submit"
+        >
+          Submit
+        </button>
+        <button class="navigate-btn" routerLink="/" type="button">Back</button>
+      </div>
+    </form>
+  </div>
+</section>

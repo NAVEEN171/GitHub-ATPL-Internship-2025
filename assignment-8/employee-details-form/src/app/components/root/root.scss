@@ -1,0 +1,18 @@
+@use "../../styles/mixins" as *;
+
+.btn-grad {
+  @include buttonGradientStyle();
+}
+.root-container {
+  @include flexCenter();
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.btn-grad-2 {
+  @include buttonGradientStyle();
+}
+
+.btn-grad-3 {
+  @include buttonGradientStyle();
+}
