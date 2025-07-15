@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, computed, Signal } from '@angular/core';
 import { Employee } from '../interfaces/employee';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { Employee } from '../interfaces/employee';
 export class EmployeeDetails {
   private employeeList: Employee[] = [];
   filteredItems: Employee[] = [];
+  computedEmployees: Signal<Employee[]> = computed(() => this.employeeList);
 
   getEmployeeData(): Employee[] {
     if (localStorage.getItem('employeeList')) {
@@ -16,7 +17,7 @@ export class EmployeeDetails {
     } else {
       this.employeeList = [];
     }
-    return this.employeeList;
+    return this.computedEmployees();
   }
 
   verifyIfUserExists(id: number): boolean {

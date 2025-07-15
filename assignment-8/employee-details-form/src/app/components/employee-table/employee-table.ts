@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, Signal } from '@angular/core';
 import { EmployeeDetails } from '../../services/employee-details';
 import { Employee } from '../../interfaces/employee';
 import { TableRow } from '../table-row/table-row';
