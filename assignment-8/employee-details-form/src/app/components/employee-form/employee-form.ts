@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Employee } from '../../interfaces/employee';
 import { RouterLink } from '@angular/router';

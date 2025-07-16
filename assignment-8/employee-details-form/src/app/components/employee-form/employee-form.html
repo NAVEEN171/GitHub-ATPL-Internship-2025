@@ -17,6 +17,8 @@
         min="1"
       />
 
+      {{ employeeId.valid }}
+
       @if(employeeId?.dirty || employeeId?.touched){
       @if(employeeId?.errors?.['required']){
       <div class="error">employee Id is Required</div>

@@ -18,14 +18,14 @@ document.getElementById("search-bar").addEventListener("keypress", (e) => {
 function addTask() {
   let searchBarValue = document.getElementById("search-bar").value;
   if (searchBarValue.trim() === "") {
-    alert("task should spot be empty");
+    alert("task should not be empty");
     return;
   }
   let createdTask = {
     name: searchBarValue,
     id: generate_uuid(),
   };
-  searchBarValue.value = "";
+  searchBarValue.innerText = "";
   toDoTasks.push(createdTask);
   renderTasks();
 }
