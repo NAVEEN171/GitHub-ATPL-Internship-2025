@@ -40,6 +40,11 @@ export class TableRow {
 
     this.allowToggleEditing();
   };
+  //it is used to check for any changes
+  // ngDoCheck() {
+  //   console.log(this.tempEmployee);
+  //   console.log(this.employee());
+  // }
   onDeleteEmployee = (id: number) => {
     this.employeeService.deleteById(id);
   };
