@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .card {
+        height: 200px;
+        width: 200px;
+        border: 2px solid gray;
+        border-radius: 5px;
+        color: rgb(82, 211, 82);
+        padding: 5px;
+      }
+      .card img {
+        width: 100%;
+        height: 50%;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      button {
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="profileGenerator">
+      <div>
+        <label for="username">username</label>
+        <input id="username" type="text" name="name" required minlength="3" />
+      </div>
+      <div>
+        <label for="age">age</label>
+        <input type="number" id="age" name="age" required min="1" max="100" />
+      </div>
+      <button type="submit">Generate Profile</button>
+    </form>
+    <script>
+      document
+        .getElementById("profileGenerator")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          let cardElement;
+          cardElement = document.querySelector("section");
+          console.log(cardElement);
+          if (cardElement) {
+            cardElement.innerHTML = "";
+          } else {
+            cardElement = document.createElement("section");
+          }
+          let username = document.getElementById("username")?.value;
+          let age = document.getElementById("age")?.value;
+          cardElement.innerHTML = `
+           <img src="/user" alt="userphoto"/>
+           <div>${username}</div>
+           <p>${age}</p>`;
+          cardElement.classList.add("card");
+          document.body.append(cardElement);
+        });
+    </script>
+  </body>
+</html>
