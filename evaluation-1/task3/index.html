@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .search-area {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #search-bar {
+        width: 80%;
+        border: 2px solid gray;
+        outline: none;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      #search-bar:hover {
+        border-color: rgb(52, 131, 221);
+      }
+      .add-task {
+        font-size: 1.1rem;
+        background-color: rgb(62, 150, 62);
+        color: white;
+        padding: 5px 20px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="search-area">
+      <input id="search-bar" class="search" placeholder="enter the task" />
+      <button onclick="addTask()" class="add-task">Add</button>
+    </div>
+    <section></section>
+  </body>
+</html>
