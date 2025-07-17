@@ -24,6 +24,10 @@
     <p>Age: {{ userAge }}</p>
     <img [src]="userImage" alt="userImage" />
   </div>
+  <div>
+    <h1>Skills - ng For</h1>
+    <h5 *ngFor="let skill of skills; let i = index">{{ i + "  " + skill }}</h5>
+  </div>
 </div>
 <div>
   <h1>Attribute Directives</h1>

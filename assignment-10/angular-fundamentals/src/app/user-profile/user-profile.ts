@@ -19,4 +19,5 @@ export class UserProfile {
   onClick() {
     this.clickMessage = `button clicked by ${this.userName}`;
   }
+  skills = ['Angular', 'TypeScript', 'HTML', 'CSS'];
 }
