@@ -14,7 +14,7 @@ export class UserProfile {
   message = '';
   userName = 'John Deo';
   userAge = 25;
-  userImage = 'https://via.placeholder.com/150';
+  userImage = 'https://cdn-icons-png.flaticon.com/512/10337/10337609.png';
   clickMessage = '';
   onClick() {
     this.clickMessage = `button clicked by ${this.userName}`;

@@ -5,3 +5,7 @@
 .basic {
   color: gray;
 }
+img {
+  width: 100px;
+  height: 100px;
+}
