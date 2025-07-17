@@ -4,10 +4,11 @@ import { Employee } from '../../interfaces/employee';
 import { RouterLink } from '@angular/router';
 import { EmployeeDetails } from '../../services/employee-details';
 import { Router } from '@angular/router';
+import { AppHighlight } from '../../directives/app-highlight';
 
 @Component({
   selector: 'app-employee-form',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, AppHighlight],
   templateUrl: './employee-form.html',
   standalone: true,
   styleUrl: './employee-form.scss',

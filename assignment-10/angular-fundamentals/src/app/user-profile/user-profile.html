@@ -1,0 +1,35 @@
+<div>
+  <h1>Interpolation &amp; Property Binding</h1>
+  <h2>welcome, {{ userName }}</h2>
+  <p>Age: {{ userAge }}</p>
+  <img [src]="userImage" alt="userImage" />
+</div>
+<div>
+  <h1>Event handlers</h1>
+  <button (click)="onClick()">Click</button>
+  <div>{{ clickMessage }}</div>
+</div>
+<div>
+  <h1>Two way binding</h1>
+  <input type="text" [(ngModel)]="message" />
+  <div>your message : {{ message }}</div>
+</div>
+<div>
+  <h1>Structural Directive</h1>
+  <button (click)="showDetails = !showDetails">
+    {{ showDetails ? "Hide" : "Show" }} Details
+  </button>
+  <div *ngIf="showDetails">
+    <h2>welcome, {{ userName }}</h2>
+    <p>Age: {{ userAge }}</p>
+    <img [src]="userImage" alt="userImage" />
+  </div>
+</div>
+<div>
+  <h1>Attribute Directives</h1>
+  <p [ngStyle]="{ color: userAge > 30 ? 'red' : 'green' }">Age Highlight</p>
+  <p [ngClass]="isPremiumUser?`premium`:`basic`">Account Type</p>
+  <p [ngClass]="{ premium: isPremiumUser, basic: !isPremiumUser }">
+    Account Type
+  </p>
+</div>

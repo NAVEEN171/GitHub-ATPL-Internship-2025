@@ -1,0 +1,39 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <label>First Name:</label>
+  <input
+    placeholder="enter your name"
+    name="username"
+    formControlName="firstName"
+  />
+  @if(reactiveForm.controls['firstName']?.dirty ||
+  reactiveForm.controls['firstName']?.touched){
+  @if(reactiveForm.controls['firstName']?.errors?.['required']){
+  <div>firstname is required</div>
+  }@else if(reactiveForm.controls['firstName'].errors?.['minlength']){
+  <div>firstname should contain atleast 6 characters</div>
+  }}
+  <label>last Name:</label>
+  <input
+    placeholder="enter your name"
+    name="username"
+    formControlName="lastName"
+  />
+
+  @if(reactiveForm.controls['lastName']?.dirty ||
+  reactiveForm.controls['lastName']?.touched){
+  @if(reactiveForm.controls['lastName']?.errors?.['required']){
+  <div>lastname is required</div>
+  }@else if(reactiveForm.controls['lastName'].errors?.['minlength']){
+  <div>lastname should contain atleast 3 characters</div>
+  }}
+  <div class="form-group m-2" formArrayName="skills">
+    <button class="btn btn-primary" (click)="addSkill()">Add skill</button>
+    <div *ngFor="let skill of skills.controls; let i = index">
+      <div [formGroupName]="i">
+        {{ i + 1 }} Skill name : <input type="text" formControlName="skill" />
+        <button (click)="deleteSkill(i)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <button [disabled]="reactiveForm.invalid" type="submit">Submit</button>
+</form>
