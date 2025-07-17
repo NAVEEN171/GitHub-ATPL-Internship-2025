@@ -13,7 +13,7 @@
 .idea/
 .editorconfig
 # Environment files (if used)
-src/environments/environment*.ts
+src/environments/environment*
 .env
 .env.*
 

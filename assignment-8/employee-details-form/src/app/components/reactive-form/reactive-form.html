@@ -5,9 +5,9 @@
     name="username"
     formControlName="firstName"
   />
-  @if(reactiveForm.controls['firstName']?.dirty ||
-  reactiveForm.controls['firstName']?.touched){
-  @if(reactiveForm.controls['firstName']?.errors?.['required']){
+  @if(reactiveForm.controls['firstName'].dirty ||
+  reactiveForm.controls['firstName'].touched){
+  @if(reactiveForm.controls['firstName'].errors?.['required']){
   <div>firstname is required</div>
   }@else if(reactiveForm.controls['firstName'].errors?.['minlength']){
   <div>firstname should contain atleast 6 characters</div>
@@ -19,9 +19,9 @@
     formControlName="lastName"
   />
 
-  @if(reactiveForm.controls['lastName']?.dirty ||
-  reactiveForm.controls['lastName']?.touched){
-  @if(reactiveForm.controls['lastName']?.errors?.['required']){
+  @if(reactiveForm.controls['lastName'].dirty ||
+  reactiveForm.controls['lastName'].touched){
+  @if(reactiveForm.controls['lastName'].errors?.['required']){
   <div>lastname is required</div>
   }@else if(reactiveForm.controls['lastName'].errors?.['minlength']){
   <div>lastname should contain atleast 3 characters</div>

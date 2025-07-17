@@ -6,6 +6,7 @@ import { MyComponent } from './components/my-component/my-component';
 import { UserGreeting } from './components/user-greeting/user-greeting';
 import { Root } from './components/root/root';
 import { ReactiveForm } from './components/reactive-form/reactive-form';
+import { SearchWeather } from './search-weather/search-weather';
 
 export const routes: Routes = [
   {
@@ -35,9 +36,15 @@ export const routes: Routes = [
   {
     path: 'root',
     component: Root,
-  },
-  {
-    path: 'reactive-form',
-    component: ReactiveForm,
+    children: [
+      {
+        path: 'reactive-form',
+        component: ReactiveForm,
+      },
+      {
+        path: 'search-weather',
+        component: SearchWeather,
+      },
+    ],
   },
 ];
