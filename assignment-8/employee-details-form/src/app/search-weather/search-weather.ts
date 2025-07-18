@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, viewChild } from '@angular/core';
 import { WeatherService } from '../services/weather-service';
 import { JsonPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { fromEvent, of, Subject } from 'rxjs';
 
 import {
   debounceTime,
@@ -10,6 +10,7 @@ import {
   switchMap,
   filter,
   tap,
+  catchError,
 } from 'rxjs/operators';
 
 @Component({
@@ -19,7 +20,11 @@ import {
   styleUrl: './search-weather.scss',
 })
 export class SearchWeather {
+  @viewChild('weathersearch')
+  searchWeatherValue!: ElementRef;
+
   searchInput = new Subject<string>();
+
   weatherInfo = {};
   constructor(private weatherService: WeatherService) {
     this.searchInput
@@ -28,7 +33,14 @@ export class SearchWeather {
         filter((value) => value.trim() !== ''),
         distinctUntilChanged(),
         debounceTime(300),
-        switchMap((searchTerm) => this.fetchWeatherReports(searchTerm))
+        switchMap((searchTerm) =>
+          this.fetchWeatherReports(searchTerm).pipe(
+            catchError((error) => {
+              console.log(error);
+              return of({});
+            })
+          )
+        )
       )
       .subscribe((data) => (this.weatherInfo = data));
   }

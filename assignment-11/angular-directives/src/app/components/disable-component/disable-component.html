@@ -1,0 +1,8 @@
+<section>
+  <input
+    type="checkbox"
+    [checked]="showButton"
+    (click)="showButton = !showButton"
+  />
+  <button [appDisableBasedCondition]="showButton">click</button>
+</section>

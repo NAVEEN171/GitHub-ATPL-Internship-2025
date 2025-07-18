@@ -14,8 +14,6 @@ export class AppHighlight {
     this.highlight('');
   }
   @HostListener('input') onKeyPress() {
-    console.log(this.el.nativeElement.value);
-    console.log(this.el.nativeElement.className);
     if (this.el.nativeElement.className.includes('ng-invalid')) {
       console.log(true);
     }
