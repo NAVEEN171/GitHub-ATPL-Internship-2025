@@ -1,1 +1,37 @@
-<router-outlet />
+<div class="page-container">
+  <nav>
+    <button
+      type="button"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Toggle
+    </button>
+    <button type="button" routerLink="/highlight" routerLinkActive="active">
+      Highlight
+    </button>
+    <button type="button" routerLink="/disable" routerLinkActive="active">
+      Disable
+    </button>
+    <button type="button" routerLink="/role-based" routerLinkActive="active">
+      Role Based
+    </button>
+    <button
+      type="button"
+      routerLink="/resize-listener"
+      routerLinkActive="active"
+    >
+      Resize Listener
+    </button>
+    <button type="button" routerLink="/count-down" routerLinkActive="active">
+      CountDown
+    </button>
+    <button type="button" routerLink="/faq-list" routerLinkActive="active">
+      FAQ List
+    </button>
+  </nav>
+  <div class="outlet-area">
+    <router-outlet />
+  </div>
+</div>

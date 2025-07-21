@@ -10,7 +10,11 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.show-tips-btn:disabled {
+  background-color: gray;
+  cursor: no-drop;
+}
 
-.show-tips-btn:hover {
+.show-tips-btn:not(:disabled):hover {
   background-color: #1d4ed8;
 }

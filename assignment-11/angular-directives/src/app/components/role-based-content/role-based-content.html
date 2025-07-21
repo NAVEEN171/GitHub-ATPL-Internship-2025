@@ -1,0 +1,50 @@
+<label for="role">Select Role: </label>
+<select
+  id="role"
+  name="role"
+  [(ngModel)]="role"
+  (ngModelChange)="onRoleChange($event)"
+>
+  <option value="">--select--</option>
+  <option value="admin">Admin</option>
+  <option value="user">User</option>
+</select>
+
+<div *ngIf="role !== 'admin' && role !== 'user'" class="access-denied">
+  <h3>Access Denied</h3>
+  <p>You have no access to this resource</p>
+</div>
+
+<div *ngIf="role === 'admin'" class="admin-content">
+  <h3>Administrator Dashboard <span class="badge admin-badge">ADMIN</span></h3>
+  <h4>Welcome, Administrator! You have full access to all system features.</h4>
+  <ul class="feature-list">
+    <li>View all user analytics and reports</li>
+    <li>Manage user accounts and permissions</li>
+    <li>Configure system settings</li>
+    <li>Access database management tools</li>
+    <li>Security and audit logs</li>
+    <li>Advanced reporting features</li>
+  </ul>
+  <h3>
+    <strong>Special Admin Tools:</strong> Server management, billing overview,
+    global configurations
+  </h3>
+</div>
+
+<div *ngIf="role === 'user'" class="user-content">
+  <h3>User Dashboard <span class="badge user-badge">USER</span></h3>
+  <h4>Welcome, User! Here are the features available to you.</h4>
+  <ul class="feature-list">
+    <li>View and edit your profile</li>
+    <li>Access your personal dashboard</li>
+    <li>View your activity reports</li>
+    <li>Contact support team</li>
+    <li>Manage notifications</li>
+    <li>Mobile app access</li>
+  </ul>
+  <h3>
+    <strong>User Benefits:</strong> Personal workspace, file storage, basic
+    reporting
+  </h3>
+</div>

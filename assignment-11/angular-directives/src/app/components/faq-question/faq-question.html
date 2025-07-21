@@ -1,0 +1,31 @@
+<div class="faq-question">
+  <p class="question-title" appHoverHighlight>
+    {{ Idx + 1 + " ." }} {{ questionData?.question }}
+  </p>
+  <div class="options-container" *ngIf="questionData?.options?.length">
+    <div
+      class="option-item"
+      *ngFor="let option of questionData?.options; let i = index"
+    >
+      <input
+        type="radio"
+        [id]="questionData?.name + getOptionLetter(i)"
+        [name]="questionData?.name"
+        [value]="option"
+        required
+      />
+      <label [for]="questionData?.name + getOptionLetter(i)">{{
+        option
+      }}</label>
+    </div>
+    <div class="answer-section" *ngIf="Role !== 'Admin'">
+      <button class="show-answer-btn" (click)="showAnswer = !showAnswer">
+        {{ showAnswer ? "Hide Answer" : "Show Answer" }}
+      </button>
+      <h1 class="answer-text" *ngIf="showAnswer">{{ questionData?.answer }}</h1>
+    </div>
+    <h1 class="admin-answer" *ngIf="Role === 'Admin'">
+      Answer:- {{ questionData?.answer }}
+    </h1>
+  </div>
+</div>

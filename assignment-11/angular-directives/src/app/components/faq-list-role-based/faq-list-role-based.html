@@ -1,0 +1,45 @@
+<div class="faq-container">
+  <div class="role-selector">
+    <label class="role-label" for="role">Select Role: </label>
+    <select
+      class="role-select"
+      id="role"
+      name="role"
+      [(ngModel)]="currentRole"
+      (ngModelChange)="onRoleChange($event)"
+    >
+      <option value="">--select--</option>
+      <option value="Admin">Admin</option>
+      <option value="Class8">Class8</option>
+      <option value="Class5">Class5</option>
+    </select>
+  </div>
+
+  <div class="access-denied" *ngIf="accessData === null">Access Denied</div>
+
+  <div class="admin-category-menu" *ngIf="currentRole === 'Admin'">
+    <button
+      class="admin-category-btn"
+      [ngClass]="adminCategory === 'Class5' ? 'active' : ''"
+      (click)="onAdminChange('Class5')"
+    >
+      Class5
+    </button>
+    <button
+      class="admin-category-btn"
+      [ngClass]="adminCategory === 'Class8' ? 'active' : ''"
+      (click)="onAdminChange('Class8')"
+    >
+      Class8
+    </button>
+  </div>
+
+  <div class="questions-list" *ngIf="accessData">
+    <app-faq-question
+      *ngFor="let Data of accessData; let idx = index"
+      [questionData]="Data"
+      [Role]="currentRole"
+      [Idx]="idx"
+    ></app-faq-question>
+  </div>
+</div>

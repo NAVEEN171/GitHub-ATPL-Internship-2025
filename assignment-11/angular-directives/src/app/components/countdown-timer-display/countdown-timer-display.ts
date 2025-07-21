@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CountDown } from '../directives/count-down';
+import { CountDown } from '../../directives/count-down';
 
 @Component({
   selector: 'app-countdown-timer-display',
