@@ -1,0 +1,6 @@
+<section>
+  <div *ngFor="let user of filteredArray">
+    {{ user.name | titlecase }} -
+    {{ user.lastLogin | date : "short" }}
+  </div>
+</section>

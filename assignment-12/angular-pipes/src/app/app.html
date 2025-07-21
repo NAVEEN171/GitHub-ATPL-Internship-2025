@@ -1,0 +1,46 @@
+<div class="page-container">
+  <nav>
+    <button
+      type="button"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Product Display List
+    </button>
+    <button type="button" routerLink="/employees" routerLinkActive="active">
+      employees Dates
+    </button>
+    <button
+      type="button"
+      routerLink="/transform-strings"
+      routerLinkActive="active"
+    >
+      Transform Strings
+    </button>
+    <button type="button" routerLink="/sort-prices" routerLinkActive="active">
+      Sort Prices
+    </button>
+    <button
+      type="button"
+      routerLink="/filtered-user-data"
+      routerLinkActive="active"
+    >
+      Filtered User Data
+    </button>
+    <button type="button" routerLink="/news" routerLinkActive="active">
+      News Headlines
+    </button>
+
+    <button
+      type="button"
+      routerLink="/custom-pipe-demonstration"
+      routerLinkActive="active"
+    >
+      Custom Pipe Usage
+    </button>
+  </nav>
+  <div class="outlet-area">
+    <router-outlet />
+  </div>
+</div>

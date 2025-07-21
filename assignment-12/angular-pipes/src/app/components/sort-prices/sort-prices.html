@@ -1,0 +1,27 @@
+<h1>Original Array</h1>
+<div class="array-formatter">
+  <div *ngFor="let item of itemPrices; let idx = index; $track: idx">
+    {{
+      idx === 0
+        ? "[" + item + " , "
+        : idx === itemPrices.length - 1
+        ? item + " ]"
+        : item + " , "
+    }}
+  </div>
+</div>
+
+<h1>Sorted Array with Slicing</h1>
+<div class="array-formatter">
+  <div
+    *ngFor="
+      let item of SortedArray | slice : 0 : 5;
+      let idx = index;
+      $track: idx
+    "
+  >
+    {{
+      idx === 0 ? "[" + item + " , " : idx === 4 ? item + " ]" : item + " , "
+    }}
+  </div>
+</div>

@@ -1,0 +1,41 @@
+.page-container {
+  display: flex;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+}
+.outlet-area {
+  width: calc(100% - 200px);
+  margin: 20px;
+}
+nav button {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: gray;
+}
+
+.active {
+  background-color: #2563eb !important;
+  color: white;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  border-color: #1d4ed8;
+}
+
+nav button:hover {
+  background-color: #1d4ed8;
+}
