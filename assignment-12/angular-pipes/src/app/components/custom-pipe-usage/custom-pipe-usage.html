@@ -1,7 +1,15 @@
 <h1>current value</h1>
 <h3>{{ value }}</h3>
 <h1>custom Operations</h1>
-<h3>{{ value | operationsby10 : "multiply" : "INR" }}</h3>
-<h3>{{ value | operationsby10 : "add" : "USD" }}</h3>
-<h3>{{ value | operationsby10 : "divide" : "USD" }}</h3>
-<h3>{{ value | operationsby10 : "subtract" : "INR" }}</h3>
+<h3>
+  {{ value | operationsby10 : "multiply" : "INR" }} - Multiply by 10 ,Convert to
+  INR
+</h3>
+<h3>{{ value | operationsby10 : "add" : "USD" }} -Add by 10 ,Convert to INR</h3>
+<h3>
+  {{ value | operationsby10 : "divide" : "USD" }} - Divide by 10 ,convert to USD
+</h3>
+<h3>
+  {{ value | operationsby10 : "subtract" : "INR" }} - Subtract by 10 ,Convert to
+  INR
+</h3>
