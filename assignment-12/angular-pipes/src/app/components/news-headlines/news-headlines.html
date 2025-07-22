@@ -1,5 +1,5 @@
-<section>
-  <h2 *ngFor="let headline of newsHeadlines">
+<section class="news-section">
+  <h2 class="news-headline" *ngFor="let headline of newsHeadlines">
     {{ headline | slice : 0 : 50 | uppercase }} ...
   </h2>
 </section>

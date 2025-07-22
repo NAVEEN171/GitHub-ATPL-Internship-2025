@@ -1,8 +1,13 @@
-<section>
-  <div *ngFor="let item of productList; let idx = index; $track: idx">
-    <img [src]="item.imageUrl" />
-    <h1>{{ item.name }}</h1>
-    <h4>{{ item.price | currency : "INR" }}</h4>
-    <h4>{{ item.price | currency : "USD" }}</h4>
+<section class="product-list">
+  <div
+    class="product-item"
+    *ngFor="let item of productList; let idx = index; $track: idx"
+  >
+    <img [src]="item.imageUrl" class="product-image" />
+    <div class="product-content">
+      <h1 class="product-name">{{ item.name }}</h1>
+      <h4 class="product-price">{{ item.price | currency : "INR" }}</h4>
+      <h4 class="product-price">{{ item.price | currency : "USD" }}</h4>
+    </div>
   </div>
 </section>

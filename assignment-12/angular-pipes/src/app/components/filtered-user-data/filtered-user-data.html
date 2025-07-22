@@ -1,5 +1,5 @@
-<section>
-  <div *ngFor="let user of filteredArray">
+<section class="filtered-users-section">
+  <div class="filtered-user-item" *ngFor="let user of filteredArray">
     {{ user.name | titlecase }} -
     {{ user.lastLogin | date : "short" }}
   </div>

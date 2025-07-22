@@ -1,3 +1,5 @@
-<div *ngFor="let user of users">
-  {{ user.name }} - Joined on {{ user.joiningDate | date : "longDate" }}
-</div>
+<section class="user-section">
+  <div class="user-item" *ngFor="let user of users">
+    {{ user.name }} - Joined on {{ user.joiningDate | date : "longDate" }}
+  </div>
+</section>
