@@ -1,0 +1,102 @@
+<section class="container">
+  <form class="registration-form" #studentForm="ngForm">
+    <h2>Registration Form</h2>
+    <input
+      type="text"
+      name="username"
+      #username="ngModel"
+      [(ngModel)]="user.fullName"
+      required
+      placeholder="enter you name..."
+    />
+    @if(username.touched || username.dirty){
+    @if(username?.errors?.['required']){
+    <div>Full name is required</div>
+    } }
+    <input
+      #email="ngModel"
+      [(ngModel)]="user.email"
+      name="email"
+      type="email"
+      pattern="^[^@]+@[^@]+\.[^@]+"
+      required
+      placeholder="enter your email"
+    />
+    @if(email?.touched || email?.dirty){ @if(email?.errors?.['required']){
+    <div class="error">Email is required</div>
+    } @else if(email?.errors?.['pattern']){
+    <div class="error">Email is Not Valid</div>
+    } }
+    <div>
+      <P>Gender</P>
+      <div>
+        <input
+          type="radio"
+          id="q1a"
+          name="gender"
+          #gender="ngModel"
+          [(ngModel)]="user.gender"
+          value="Female"
+          required
+        />
+        <label for="q1a">Female</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="q1b"
+          name="feedback"
+          value="Male"
+          [(ngModel)]="user.gender"
+        />
+        <label for="q1b">Male</label>
+      </div>
+    </div>
+    @if(gender.touched || gender.dirty){ @if(gender.errors?.['required']){
+    <div class="error">Gender is Required</div>
+    } }
+
+    <select
+      name="role"
+      id="role"
+      #course="ngModel"
+      [(ngModel)]="user.course"
+      required
+    >
+      <option value="" selected>Select Course</option>
+      <option value="Angular">Angular</option>
+      <option value="React">React</option>
+      <option value="Vue">Vue</option>
+    </select>
+    <textarea
+      placeholder="enter comment..."
+      name="comments"
+      id="comments"
+      #comments="ngModel"
+      [(ngModel)]="user.comments"
+    ></textarea>
+    <button type="submit" [disabled]="!studentForm.valid">Submit</button>
+  </form>
+  <div *ngIf="studentForm.submitted">
+    <table>
+      <thead>
+        <tr>
+          <th>Full name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Course</th>
+          <th>comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.gender }}</td>
+          <td>{{ user.course }}</td>
+          <th>{{ user.comments }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+<section>
+  <form #feedBackData="ngForm" (ngSubmit)="onSubmit(feedBackData)">
+    <input
+      type="text"
+      name="username"
+      #username="ngModel"
+      [(ngModel)]="user.fullName"
+    />
+    <input
+      type="text"
+      name="comments"
+      #comments="ngModel"
+      [(ngModel)]="user.comments"
+    />
+    <div>
+      <P>What is your Experience at ATPL?</P>
+      <div>
+        <input
+          type="radio"
+          id="q1a"
+          name="feedback"
+          #feedback="ngModel"
+          [(ngModel)]="user.feedbackType"
+          value="Good"
+          required
+        />
+        <label for="q1a">Good</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="q1b"
+          name="feedback"
+          value="Average"
+          [(ngModel)]="user.feedbackType"
+        />
+        <label for="q1b">Average</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="q1c"
+          name="feedback"
+          value="Poor"
+          [(ngModel)]="user.feedbackType"
+        />
+        <label for="q1c">Poor</label>
+      </div>
+    </div>
+    @if(feedback.touched || feedback.dirty){ @if(feedback.errors?.['required']){
+    <div class="error">Feedback is Required</div>
+    } }
+    <button [disabled]="!feedBackData.valid" type="submit">Submit</button>
+  </form>
+  <div *ngIf="feedBackData.submitted">
+    Thank for your Feedback {{ feedBackData.value.username }}! We will look into
+    your it and get back to you .
+  </div>
+</section>

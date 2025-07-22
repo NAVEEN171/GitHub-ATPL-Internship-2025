@@ -1,0 +1,46 @@
+<section>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <input
+      #username="ngModel"
+      [(ngModel)]="user.username"
+      name="username"
+      type="text"
+      required
+    />
+    @if(username?.touched || username?.dirty){
+    @if(username?.errors?.['required']){
+    <div class="error">Name is required</div>
+    } }
+
+    <input
+      #email="ngModel"
+      [(ngModel)]="user.email"
+      name="email"
+      type="email"
+      pattern="^[^@]+@[^@]+\.[^@]+"
+      required
+    />
+    @if(email?.touched || email?.dirty){ @if(email?.errors?.['required']){
+    <div class="error">Email is required</div>
+    } @else if(email?.errors?.['pattern']){
+    <div class="error">Email is Not Valid</div>
+    } }
+    <input
+      #password="ngModel"
+      [(ngModel)]="user.password"
+      name="password"
+      type="password"
+      minlength="6"
+      required
+    />
+    @if(password?.touched || password?.dirty){
+    @if(password?.errors?.['required']){
+    <div class="error">Password is required</div>
+    } @else if(password?.errors?.['minlength']){
+    <div class="error">Password should atleast 6 characters</div>
+    } }
+
+    <button [disabled]="!userForm.valid" type="submit">Submit</button>
+    <button (click)="ResetValues(userForm)">Reset Values</button>
+  </form>
+</section>

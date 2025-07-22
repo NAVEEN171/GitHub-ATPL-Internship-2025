@@ -1,0 +1,39 @@
+<section>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <input
+      #username="ngModel"
+      [(ngModel)]="user.username"
+      name="username"
+      type="text"
+      required
+    />
+    <h5>touched- {{ username.touched }}</h5>
+    <h5>dirty- {{ username.dirty }}</h5>
+    <h5>valid- {{ username.valid }}</h5>
+
+    <input
+      #email="ngModel"
+      [(ngModel)]="user.email"
+      name="email"
+      type="email"
+      pattern="^[^@]+@[^@]+\.[^@]+"
+      required
+    />
+    <h5>touched- {{ email.touched }}</h5>
+    <h5>dirty- {{ email.dirty }}</h5>
+    <h5>valid- {{ email.valid }}</h5>
+    <input
+      #password="ngModel"
+      [(ngModel)]="user.password"
+      name="password"
+      type="password"
+      minlength="6"
+      required
+    />
+    <h5>touched- {{ password.touched }}</h5>
+    <h5>dirty- {{ password.dirty }}</h5>
+    <h5>valid- {{ password.valid }}</h5>
+
+    <button [disabled]="!userForm.valid" type="submit">Submit</button>
+  </form>
+</section>

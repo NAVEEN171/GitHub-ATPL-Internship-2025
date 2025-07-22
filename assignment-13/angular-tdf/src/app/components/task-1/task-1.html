@@ -1,0 +1,23 @@
+<section>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <input
+      #username="ngModel"
+      [(ngModel)]="user.username"
+      name="username"
+      type="text"
+      required
+    />
+    <input
+      #password="ngModel"
+      [(ngModel)]="user.password"
+      name="password"
+      type="password"
+      required
+    />
+
+    <button [disabled]="!userForm.valid" type="submit">Submit</button>
+  </form>
+  <div *ngIf="userForm.submitted">
+    <pre>{{ userForm.value | json }}</pre>
+  </div>
+</section>
