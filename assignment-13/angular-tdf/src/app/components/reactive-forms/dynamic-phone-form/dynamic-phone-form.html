@@ -1,10 +1,16 @@
-<form [formGroup]="PhoneForm" (ngSubmit)="onSubmit()">
-  <div formArrayName="phone">
-    <button type="button" (click)="addNewField()">Add</button>
+<form class="form-container" [formGroup]="PhoneForm" (ngSubmit)="onSubmit()">
+  <h1>Dynamic Phone No Form</h1>
+  <div class="form-no-container" formArrayName="phone">
+    <button type="button" (click)="addNewField()">Add PhoneNo</button>
     <div *ngFor="let phone of phoneNo.controls; let idx = index">
       <div [formGroupName]="idx">
-        <input type="text" name="phoneno" formControlName="mobile" />
-        <button (click)="removeAtIndex(idx)">Delete</button>
+        <input
+          class="form-input"
+          type="number"
+          name="phoneno"
+          formControlName="mobile"
+        />
+        <button type="button" (click)="removeAtIndex(idx)">Delete</button>
       </div>
     </div>
   </div>

@@ -9,6 +9,7 @@ import { PasswordConfirmValidator } from './components/reactive-forms/password-c
 import { BasicReactiveForm } from './components/reactive-forms/basic-reactive-form/basic-reactive-form';
 import { NestedForm } from './components/reactive-forms/nested-form/nested-form';
 import { DynamicPhoneForm } from './components/reactive-forms/dynamic-phone-form/dynamic-phone-form';
+import { StudentForm } from './components/reactive-forms/student-form/student-form';
 
 export const routes: Routes = [
   {
@@ -50,5 +51,9 @@ export const routes: Routes = [
   {
     path: 'dynamic-phone',
     component: DynamicPhoneForm,
+  },
+  {
+    path: 'student-form',
+    component: StudentForm,
   },
 ];

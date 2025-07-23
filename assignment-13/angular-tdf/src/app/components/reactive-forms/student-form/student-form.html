@@ -1,0 +1,47 @@
+<form class="form-container" [formGroup]="studentForm">
+  <h1>Student Form</h1>
+  <input
+    formControlName="firstName"
+    type="text"
+    placeholder="enter first name"
+  />
+  <input formControlName="lastName" type="text" placeholder="enter last name" />
+  <input formControlName="email" type="email" placeholder="enter email" />
+  <div formGroupName="address">
+    <h1>Address</h1>
+    <input
+      formGroupName="city"
+      type="text"
+      name="city"
+      placeholder="enter city"
+    />
+    <input
+      formGroupName="street"
+      type="text"
+      name="street"
+      placeholder="enter state"
+    />
+    <input
+      formGroupName="pincode"
+      type="number"
+      name="pincode"
+      placeholder="enter pincode"
+    />
+    <div>{{ studentForm.get("address.pincode")?.errors?.['minError'] }}</div>
+  </div>
+  <div class="form-no-container" formArrayName="phonenos">
+    <button type="button" (click)="addNewPhone()">Add PhoneNo</button>
+    <div *ngFor="let phone of phones.controls; let idx = index">
+      <div [formGroupName]="idx">
+        <input
+          class="form-input"
+          type="number"
+          name="phoneno"
+          formControlName="mobileno"
+        />
+        <button type="button" (click)="removeAtIndex(idx)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <button [disabled]="studentForm.invalid" type="submit">Submit</button>
+</form>
