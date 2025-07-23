@@ -20,7 +20,6 @@
   font-weight: 600;
 }
 
-/* Input Groups */
 .input-group {
   margin-bottom: 1.5rem;
 }
@@ -31,7 +30,6 @@
   color: #555;
 }
 
-/* Form Inputs */
 .form-input,
 .form-select,
 .form-textarea {
@@ -56,7 +54,6 @@
   resize: vertical;
 }
 
-/* Radio Buttons */
 .radio-group {
   display: flex;
   gap: 1rem;
@@ -77,14 +74,12 @@
   color: #555;
 }
 
-/* Error Messages */
 .error-message {
   color: #dc3545;
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
 
-/* Submit Button */
 .submit-btn {
   width: 100%;
   padding: 0.75rem;
@@ -106,7 +101,6 @@
   cursor: not-allowed;
 }
 
-/* Results Table */
 .result-table {
   background: #fff;
   padding: 2rem;
