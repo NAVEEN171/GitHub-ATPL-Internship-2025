@@ -1,1 +1,30 @@
-<router-outlet />
+<div class="page-container">
+  <nav>
+    <button
+      type="button"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Task 1
+    </button>
+    <button type="button" routerLink="/task-2" routerLinkActive="active">
+      Task 2
+    </button>
+    <button type="button" routerLink="/task-3" routerLinkActive="active">
+      task-3
+    </button>
+    <button type="button" routerLink="/task-4" routerLinkActive="active">
+      task-4
+    </button>
+    <button type="button" routerLink="/task-6" routerLinkActive="active">
+      task-6
+    </button>
+    <button type="button" routerLink="/task-7" routerLinkActive="active">
+      Bonus Task
+    </button>
+  </nav>
+  <div class="side-bar-container">
+    <router-outlet />
+  </div>
+</div>

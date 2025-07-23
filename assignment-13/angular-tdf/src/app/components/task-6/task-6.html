@@ -1,39 +1,78 @@
 <section>
-  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-    <input
-      #username="ngModel"
-      [(ngModel)]="user.username"
-      name="username"
-      type="text"
-      required
-    />
-    <h5>touched- {{ username.touched }}</h5>
-    <h5>dirty- {{ username.dirty }}</h5>
-    <h5>valid- {{ username.valid }}</h5>
+  <div class="form-container">
+    <h2 class="form-title">Create Account</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <div class="field-group">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          #username="ngModel"
+          [(ngModel)]="user.username"
+          name="username"
+          type="text"
+          placeholder="Enter your username"
+          required
+          class="form-input"
+          [class.error]="username.invalid && username.touched"
+        />
+        <div class="validation-info">
+          <span class="validation-item">Touched: {{ username.touched }}</span>
+          <span class="validation-item">Dirty: {{ username.dirty }}</span>
+          <span class="validation-item" [class.valid]="username.valid"
+            >Valid: {{ username.valid }}</span
+          >
+        </div>
+      </div>
 
-    <input
-      #email="ngModel"
-      [(ngModel)]="user.email"
-      name="email"
-      type="email"
-      pattern="^[^@]+@[^@]+\.[^@]+"
-      required
-    />
-    <h5>touched- {{ email.touched }}</h5>
-    <h5>dirty- {{ email.dirty }}</h5>
-    <h5>valid- {{ email.valid }}</h5>
-    <input
-      #password="ngModel"
-      [(ngModel)]="user.password"
-      name="password"
-      type="password"
-      minlength="6"
-      required
-    />
-    <h5>touched- {{ password.touched }}</h5>
-    <h5>dirty- {{ password.dirty }}</h5>
-    <h5>valid- {{ password.valid }}</h5>
+      <div class="field-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          #email="ngModel"
+          [(ngModel)]="user.email"
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+          pattern="^[^@]+@[^@]+\.[^@]+"
+          required
+          class="form-input"
+          [class.error]="email.invalid && email.touched"
+        />
+        <div class="validation-info">
+          <span class="validation-item">Touched: {{ email.touched }}</span>
+          <span class="validation-item">Dirty: {{ email.dirty }}</span>
+          <span class="validation-item" [class.valid]="email.valid"
+            >Valid: {{ email.valid }}</span
+          >
+        </div>
+      </div>
 
-    <button [disabled]="!userForm.valid" type="submit">Submit</button>
-  </form>
+      <div class="field-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          #password="ngModel"
+          [(ngModel)]="user.password"
+          name="password"
+          type="password"
+          placeholder="Enter your password"
+          minlength="6"
+          required
+          class="form-input"
+          [class.error]="password.invalid && password.touched"
+        />
+        <div class="validation-info">
+          <span class="validation-item">Touched: {{ password.touched }}</span>
+          <span class="validation-item">Dirty: {{ password.dirty }}</span>
+          <span class="validation-item" [class.valid]="password.valid"
+            >Valid: {{ password.valid }}</span
+          >
+        </div>
+      </div>
+
+      <button [disabled]="!userForm.valid" type="submit" class="submit-btn">
+        Create Account
+      </button>
+    </form>
+  </div>
 </section>

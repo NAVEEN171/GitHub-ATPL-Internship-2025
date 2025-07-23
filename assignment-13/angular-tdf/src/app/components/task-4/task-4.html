@@ -1,12 +1,35 @@
-<section>
-  <form #countryData="ngForm">
-    <select name="role" id="role" #role="ngModel" [(ngModel)]="role" required>
-      <option value="" selected>Select Country</option>
-      <option value="India">India</option>
-      <option value="USA">USA</option>
-      <option value="UK">UK</option>
-    </select>
-    <button type="submit" [disabled]="!countryData.valid">Submit</button>
+<section class="form-container">
+  <form #countryData="ngForm" class="country-form" name="countrySelectionForm">
+    <div class="form-field">
+      <label for="role" class="form-label">Country</label>
+      <select
+        name="role"
+        id="role"
+        #role="ngModel"
+        [(ngModel)]="role"
+        required
+        class="form-select"
+      >
+        <option value="" selected>Select Country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="!countryData.valid || !role"
+      class="submit-button"
+    >
+      Submit
+    </button>
   </form>
-  <div *ngIf="countryData.submitted">{{ countryData.value.role }}</div>
+
+  <div *ngIf="countryData.submitted" class="result-display">
+    <div class="result-card">
+      <h3 class="result-title">Selected Country</h3>
+      <p class="result-value">{{ countryData.value.role }}</p>
+    </div>
+  </div>
 </section>

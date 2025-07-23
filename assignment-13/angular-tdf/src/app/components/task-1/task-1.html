@@ -1,23 +1,47 @@
-<section>
-  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-    <input
-      #username="ngModel"
-      [(ngModel)]="user.username"
-      name="username"
-      type="text"
-      required
-    />
-    <input
-      #password="ngModel"
-      [(ngModel)]="user.password"
-      name="password"
-      type="password"
-      required
-    />
+<div class="login-container">
+  <h2 class="form-title">User Login</h2>
 
-    <button [disabled]="!userForm.valid" type="submit">Submit</button>
-  </form>
-  <div *ngIf="userForm.submitted">
-    <pre>{{ userForm.value | json }}</pre>
-  </div>
-</section>
+  <section>
+    <form
+      #userForm="ngForm"
+      (ngSubmit)="onSubmit(userForm)"
+      class="user-login-form"
+    >
+      <div class="input-group">
+        <label class="input-label" for="username">Username</label>
+        <input
+          #username="ngModel"
+          [(ngModel)]="user.username"
+          name="username"
+          type="text"
+          required
+          class="form-input"
+          id="username"
+          placeholder="Enter your username"
+        />
+      </div>
+
+      <div class="input-group">
+        <label class="input-label" for="password">Password</label>
+        <input
+          #password="ngModel"
+          [(ngModel)]="user.password"
+          name="password"
+          type="password"
+          required
+          class="form-input"
+          id="password"
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <button [disabled]="!userForm.valid" type="submit" class="submit-btn">
+        Sign In
+      </button>
+    </form>
+
+    <div *ngIf="userForm.submitted" class="form-output">
+      <pre>{{ userForm.value | json }}</pre>
+    </div>
+  </section>
+</div>
