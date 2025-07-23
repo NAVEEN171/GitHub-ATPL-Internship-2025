@@ -1,0 +1,44 @@
+<form [formGroup]="userForm" class="form-container" (ngSubmit)="onSubmit()">
+  <div>Register</div>
+  <input
+    formControlName="username"
+    class="form-input"
+    type="text"
+    name="user"
+    placeholder="Enter username"
+  />
+  <input
+    formControlName="email"
+    class="form-input"
+    type="email"
+    name="email"
+    placeholder="Enter email"
+  />
+  <div class="address-container" formGroupName="address">
+    <h3>Address</h3>
+    <input
+      formControlName="city"
+      class="form-input"
+      type="text"
+      name="city"
+      placeholder="city"
+    />
+    <input
+      formControlName="street"
+      class="form-input"
+      type="text"
+      name="street"
+      placeholder="Enter street"
+    />
+    <input
+      formControlName="pincode"
+      class="form-input"
+      type="number"
+      name="pincode"
+      placeholder="Enter pincode"
+    />
+  </div>
+
+  <button [disabled]="userForm.invalid" type="submit">Submit</button>
+  <button (click)="onReset()" type="submit">Reset</button>
+</form>

@@ -1,0 +1,12 @@
+<form [formGroup]="PhoneForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="phone">
+    <button type="button" (click)="addNewField()">Add</button>
+    <div *ngFor="let phone of phoneNo.controls; let idx = index">
+      <div [formGroupName]="idx">
+        <input type="text" name="phoneno" formControlName="mobile" />
+        <button (click)="removeAtIndex(idx)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <button [disabled]="PhoneForm.invalid" type="submit">Submit</button>
+</form>
