@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   ReactiveFormsModule,
@@ -8,7 +9,7 @@ import {
 
 @Component({
   selector: 'app-basic-reactive-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './basic-reactive-form.html',
   styleUrl: './basic-reactive-form.css',
 })
