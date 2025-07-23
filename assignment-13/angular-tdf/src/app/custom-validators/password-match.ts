@@ -5,7 +5,7 @@ export const validatePasswordMatch: ValidatorFn = (
 ): { [key: string]: any } | null => {
   let password = control.get('password')?.value;
   let confirmpassword = control.get('confirmPassword')?.value;
-
+  console.log(password);
   if (!password || !confirmpassword || password !== confirmpassword) {
     return { matchError: true };
   }

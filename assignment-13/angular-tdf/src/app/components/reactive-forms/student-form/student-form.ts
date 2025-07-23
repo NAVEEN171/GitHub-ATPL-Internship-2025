@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ValidateZipCode } from '../../../custom-validators/zipcode-check';
 
 import {
@@ -16,7 +16,7 @@ import {
   templateUrl: './student-form.html',
   styleUrl: './student-form.css',
 })
-export class StudentForm {
+export class StudentForm implements OnInit {
   studentForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.studentForm = this.fb.group({
@@ -26,7 +26,7 @@ export class StudentForm {
       address: this.fb.group({
         city: [''],
         street: [''],
-        pincode: [' ', ValidateZipCode],
+        pincode: ['', [Validators.required, ValidateZipCode]],
       }),
       phonenos: this.fb.array([]),
     });
@@ -45,5 +45,21 @@ export class StudentForm {
   }
   removeAtIndex(num: number) {
     this.phones.removeAt(num);
+  }
+  onSubmit() {
+    console.log(this.studentForm.value);
+  }
+  ngOnInit(): void {
+    this.studentForm.setValue({
+      firstName: 'naveen',
+      lastName: 'Sunkana',
+      email: 'naveen34@gmail.com',
+      address: {
+        city: 'vizianagaram',
+        street: 'poolbaugh',
+        pincode: 0,
+      },
+      phonenos: [],
+    });
   }
 }

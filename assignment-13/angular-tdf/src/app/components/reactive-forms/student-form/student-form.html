@@ -1,33 +1,60 @@
-<form class="form-container" [formGroup]="studentForm">
+<form class="form-container" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
   <h1>Student Form</h1>
   <input
     formControlName="firstName"
     type="text"
     placeholder="enter first name"
+    class="form-input"
   />
+  @if(studentForm.controls['firstName'].dirty ||
+  studentForm.controls['firstName'].touched){
+  @if(studentForm.get('firstName')?.errors?.['required']){
+  <div class="error">Firstname is required</div>
+  } }
   <input formControlName="lastName" type="text" placeholder="enter last name" />
+  @if(studentForm.controls['lastName'].dirty ||
+  studentForm.controls['lastName'].touched){
+  @if(studentForm.get('lastName')?.errors?.['required']){
+  <div class="error">lastname is required</div>
+  } }
   <input formControlName="email" type="email" placeholder="enter email" />
-  <div formGroupName="address">
+  @if(studentForm.controls['email'].dirty ||
+  studentForm.controls['email'].touched){
+  @if(studentForm.get('email')?.errors?.['required']){
+  <div class="error">email is required</div>
+  } @else if(studentForm.get('email')?.errors?.['email']){
+  <div class="error">provide Valid email</div>
+  }}
+  <div class="form-no-container" formGroupName="address">
     <h1>Address</h1>
     <input
-      formGroupName="city"
+      formControlName="city"
       type="text"
       name="city"
       placeholder="enter city"
+      class="form-input"
     />
+
     <input
-      formGroupName="street"
+      formControlName="street"
       type="text"
       name="street"
       placeholder="enter state"
+      class="form-input"
     />
     <input
-      formGroupName="pincode"
+      formControlName="pincode"
       type="number"
       name="pincode"
       placeholder="enter pincode"
+      class="form-input"
     />
-    <div>{{ studentForm.get("address.pincode")?.errors?.['minError'] }}</div>
+    <div
+      class="error"
+      *ngIf="studentForm.get('address.pincode')?.errors?.['minError']"
+    >
+      Pincode should be 6 digits
+    </div>
   </div>
   <div class="form-no-container" formArrayName="phonenos">
     <button type="button" (click)="addNewPhone()">Add PhoneNo</button>
@@ -38,6 +65,7 @@
           type="number"
           name="phoneno"
           formControlName="mobileno"
+          class="form-input"
         />
         <button type="button" (click)="removeAtIndex(idx)">Delete</button>
       </div>
