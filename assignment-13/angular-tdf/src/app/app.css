@@ -5,22 +5,18 @@
   width: 100%;
   justify-content: center;
 }
-body {
-  margin: 0;
-  padding: 0;
-}
+
 .page-container {
   display: flex;
-}
-* {
-  box-sizing: border-box;
 }
 
 nav {
   display: flex;
   flex-direction: column;
+  padding: 0px 10px;
   gap: 10px;
   width: 200px;
+  margin-top: 60px;
 }
 
 nav button {
