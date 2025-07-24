@@ -1,0 +1,25 @@
+<mat-toolbar class="tool-tip">
+  <button
+    matIconButton
+    (click)="sidenav.toggle()"
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Angular Project</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <mat-sidenav-content class="side-bar-content">
+      <h2>Pages</h2>
+    </mat-sidenav-content>
+    <div class="example-events">
+      @for (e of events; track e) {
+      <div>{{ e }}</div>
+      }
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>

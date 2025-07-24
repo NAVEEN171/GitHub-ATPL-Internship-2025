@@ -1,0 +1,44 @@
+<form
+  [formGroup]="userDetails"
+  class="flex flex-col gap-3 w-[350px] p-5 shadow-lg rounded-xl"
+>
+  <h1 class="font-bold text-center text-2xl">Welcome Back !</h1>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <div class="flex">
+      <button class="pr-1"><mat-icon>email</mat-icon></button>
+      <input formControlName="email" matInput type="email" />
+    </div>
+  </mat-form-field>
+  @if(userDetails?.controls?.['email']?.touched ||
+  userDetails?.controls?.['email']?.dirty){
+  @if(userDetails.get("email")?.errors?.['required']){
+  <mat-error>email is required</mat-error>
+  } @else if(userDetails.get('email')?.errors?.['email']){
+  <mat-error>Email is not valid</mat-error>
+  } }
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <div class="flex">
+      <button class="pr-1"><mat-icon>password</mat-icon></button>
+      <input formControlName="password" matInput type="password" />
+    </div>
+  </mat-form-field>
+  X @if(userDetails?.controls?.['password']?.touched ||
+  userDetails?.controls?.['password']?.dirty){
+  @if(userDetails.get("password")?.errors?.['required']){
+  <mat-error mat-error>password is required</mat-error>
+  } @else if(userDetails.get("password")?.errors?.['minlength']){
+  <mat-error mat-error>minimum password should be 8 characters</mat-error>
+
+  } }
+  <button
+    [disabled]="userDetails.invalid"
+    matButton="elevated"
+    color="secondary"
+    name="Home"
+  >
+    Login
+  </button>
+</form>

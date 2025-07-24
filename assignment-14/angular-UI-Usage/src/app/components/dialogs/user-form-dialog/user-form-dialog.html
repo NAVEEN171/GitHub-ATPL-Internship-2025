@@ -1,0 +1,52 @@
+<mat-dialog-content>
+  <form
+    [formGroup]="userDetails"
+    (ngSubmit)="closeDialog()"
+    class="flex flex-col gap-3 w-[350px] p-5 rounded-xl"
+  >
+    <h1 class="font-bold text-center text-2xl">Welcome Back !</h1>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <div class="flex">
+        <input formControlName="name" matInput type="text" />
+      </div>
+    </mat-form-field>
+
+    @if(userDetails?.controls?.['name']?.touched ||
+    userDetails?.controls?.['name']?.dirty){
+    @if(userDetails.get("name")?.errors?.['required']){
+    <mat-error>name is required</mat-error>
+    } }
+
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <div class="flex">
+        <input formControlName="phone" matInput type="number" />
+      </div>
+    </mat-form-field>
+    @if(userDetails?.controls?.['phone']?.touched ||
+    userDetails?.controls?.['phone']?.dirty){
+    @if(userDetails.get("phone")?.errors?.['required']){
+    <mat-error mat-error>phone no is required</mat-error>
+    } }
+    <mat-form-field>
+      <mat-label>City</mat-label>
+      <div class="flex">
+        <input formControlName="city" matInput type="text" />
+      </div>
+    </mat-form-field>
+    @if(userDetails?.controls?.['city']?.touched ||
+    userDetails?.controls?.['city']?.dirty){
+    @if(userDetails.get("city")?.errors?.['required']){
+    <mat-error>city is required</mat-error>
+    } }
+    <button
+      [disabled]="userDetails.invalid"
+      matButton="elevated"
+      color="secondary"
+      name="Home"
+    >
+      Register
+    </button>
+  </form>
+</mat-dialog-content>
