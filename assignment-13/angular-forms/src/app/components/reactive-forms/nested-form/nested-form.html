@@ -1,44 +1,88 @@
 <form [formGroup]="userForm" class="form-container" (ngSubmit)="onSubmit()">
-  <div>Register</div>
-  <input
-    formControlName="username"
-    class="form-input"
-    type="text"
-    name="user"
-    placeholder="Enter username"
-  />
-  <input
-    formControlName="email"
-    class="form-input"
-    type="email"
-    name="email"
-    placeholder="Enter email"
-  />
-  <div class="address-container" formGroupName="address">
-    <h3>Address</h3>
+  <div class="form-title">Register</div>
+
+  <div class="input-group">
     <input
-      formControlName="city"
+      formControlName="username"
       class="form-input"
       type="text"
-      name="city"
-      placeholder="city"
+      name="user"
+      placeholder="Enter username"
     />
-    <input
-      formControlName="street"
-      class="form-input"
-      type="text"
-      name="street"
-      placeholder="Enter street"
-    />
-    <input
-      formControlName="pincode"
-      class="form-input"
-      type="number"
-      name="pincode"
-      placeholder="Enter pincode"
-    />
+    <div
+      class="error"
+      *ngIf="
+        userForm.controls['username'].invalid &&
+        userForm.controls['username'].touched
+      "
+    >
+      Username is required
+    </div>
   </div>
 
-  <button [disabled]="userForm.invalid" type="submit">Submit</button>
-  <button (click)="onReset()" type="submit">Reset</button>
+  <div class="input-group">
+    <input
+      formControlName="email"
+      class="form-input"
+      type="email"
+      name="email"
+      placeholder="Enter email"
+    />
+    <div
+      class="error"
+      *ngIf="
+        userForm.controls['email'].invalid && userForm.controls['email'].touched
+      "
+    >
+      <span *ngIf="userForm.controls['email'].errors?.['required']"
+        >Email is required</span
+      >
+      <span *ngIf="userForm.controls['email'].errors?.['email']"
+        >Please enter a valid email</span
+      >
+    </div>
+  </div>
+
+  <div class="address-container" formGroupName="address">
+    <h3 class="address-title">Address</h3>
+
+    <div class="input-group">
+      <input
+        formControlName="city"
+        class="form-input"
+        type="text"
+        name="city"
+        placeholder="Enter city"
+      />
+    </div>
+
+    <div class="input-group">
+      <input
+        formControlName="street"
+        class="form-input"
+        type="text"
+        name="street"
+        placeholder="Enter street"
+      />
+    </div>
+
+    <div class="input-group">
+      <input
+        formControlName="pincode"
+        class="form-input"
+        type="number"
+        name="pincode"
+        placeholder="Enter pincode"
+      />
+    </div>
+  </div>
+
+  <div class="button-group">
+    <button class="btn btn-primary" [disabled]="userForm.invalid" type="submit">
+      Submit
+    </button>
+    <button class="btn btn-secondary" (click)="onReset()" type="button">
+      Reset
+    </button>
+  </div>
 </form>

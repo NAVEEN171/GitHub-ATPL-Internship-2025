@@ -1,37 +1,51 @@
 <form class="form-container" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
-  <h1>Student Form</h1>
+  <h1>Student Registration Form</h1>
+
   <input
     formControlName="firstName"
     type="text"
-    placeholder="enter first name"
+    placeholder="Enter first name"
     class="form-input"
   />
   @if(studentForm.controls['firstName'].dirty ||
   studentForm.controls['firstName'].touched){
   @if(studentForm.get('firstName')?.errors?.['required']){
-  <div class="error">Firstname is required</div>
+  <div class="error">First name is required</div>
   } }
-  <input formControlName="lastName" type="text" placeholder="enter last name" />
+
+  <input
+    formControlName="lastName"
+    type="text"
+    placeholder="Enter last name"
+    class="form-input"
+  />
   @if(studentForm.controls['lastName'].dirty ||
   studentForm.controls['lastName'].touched){
   @if(studentForm.get('lastName')?.errors?.['required']){
-  <div class="error">lastname is required</div>
+  <div class="error">Last name is required</div>
   } }
-  <input formControlName="email" type="email" placeholder="enter email" />
+
+  <input
+    formControlName="email"
+    type="email"
+    placeholder="Enter email address"
+    class="form-input"
+  />
   @if(studentForm.controls['email'].dirty ||
   studentForm.controls['email'].touched){
   @if(studentForm.get('email')?.errors?.['required']){
-  <div class="error">email is required</div>
+  <div class="error">Email is required</div>
   } @else if(studentForm.get('email')?.errors?.['email']){
-  <div class="error">provide Valid email</div>
-  }}
+  <div class="error">Please provide a valid email</div>
+  } }
+
   <div class="form-no-container" formGroupName="address">
-    <h1>Address</h1>
+    <h1>Address Information</h1>
     <input
       formControlName="city"
       type="text"
       name="city"
-      placeholder="enter city"
+      placeholder="Enter city"
       class="form-input"
     />
 
@@ -39,14 +53,15 @@
       formControlName="street"
       type="text"
       name="street"
-      placeholder="enter state"
+      placeholder="Enter street address"
       class="form-input"
     />
+
     <input
       formControlName="pincode"
       type="number"
       name="pincode"
-      placeholder="enter pincode"
+      placeholder="Enter pincode"
       class="form-input"
     />
     <div
@@ -56,20 +71,35 @@
       Pincode should be 6 digits
     </div>
   </div>
+
   <div class="form-no-container" formArrayName="phonenos">
-    <button type="button" (click)="addNewPhone()">Add PhoneNo</button>
-    <div *ngFor="let phone of phones.controls; let idx = index">
-      <div [formGroupName]="idx">
+    <h1>Phone Numbers</h1>
+    <button type="button" class="btn-secondary" (click)="addNewPhone()">
+      Add Phone Number
+    </button>
+    <div
+      *ngFor="let phone of phones.controls; let idx = index"
+      class="phone-item"
+    >
+      <div
+        [formGroupName]="idx"
+        style="display: flex; align-items: center; width: 100%"
+      >
         <input
           class="form-input"
           type="number"
           name="phoneno"
           formControlName="mobileno"
-          class="form-input"
+          placeholder="Enter phone number"
         />
-        <button type="button" (click)="removeAtIndex(idx)">Delete</button>
+        <button type="button" class="btn-danger" (click)="removeAtIndex(idx)">
+          Remove
+        </button>
       </div>
     </div>
   </div>
-  <button [disabled]="studentForm.invalid" type="submit">Submit</button>
+
+  <button [disabled]="studentForm.invalid" type="submit" class="btn-primary">
+    Submit Form
+  </button>
 </form>

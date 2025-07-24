@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   ReactiveFormsModule,
@@ -8,7 +9,7 @@ import {
 
 @Component({
   selector: 'app-nested-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './nested-form.html',
   styleUrl: './nested-form.css',
 })

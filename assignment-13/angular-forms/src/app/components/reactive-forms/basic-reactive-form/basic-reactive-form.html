@@ -1,5 +1,5 @@
 <form [formGroup]="userForm" class="form-container" (ngSubmit)="onSubmit()">
-  <div>Register</div>
+  <div class="form-title">Register</div>
   <input
     formControlName="username"
     class="form-input"
@@ -22,6 +22,18 @@
     placeholder="Enter password"
   />
 
-  <button [disabled]="userForm.invalid" type="submit">Submit</button>
-  <button (click)="onReset()" type="submit">Reset</button>
+  <button
+    class="form-button form-button-primary"
+    [disabled]="userForm.invalid"
+    type="submit"
+  >
+    Submit
+  </button>
+  <button
+    class="form-button form-button-secondary"
+    (click)="onReset()"
+    type="submit"
+  >
+    Reset
+  </button>
 </form>

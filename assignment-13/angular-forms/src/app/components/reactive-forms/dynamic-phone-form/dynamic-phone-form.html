@@ -1,18 +1,36 @@
 <form class="form-container" [formGroup]="PhoneForm" (ngSubmit)="onSubmit()">
-  <h1>Dynamic Phone No Form</h1>
+  <h1 class="form-title">Dynamic Phone No Form</h1>
   <div class="form-no-container" formArrayName="phone">
-    <button type="button" (click)="addNewField()">Add PhoneNo</button>
-    <div *ngFor="let phone of phoneNo.controls; let idx = index">
-      <div [formGroupName]="idx">
+    <button class="add-button" type="button" (click)="addNewField()">
+      Add PhoneNo
+    </button>
+    <div
+      class="phone-list"
+      *ngFor="let phone of phoneNo.controls; let idx = index"
+    >
+      <div class="phone-item" [formGroupName]="idx">
         <input
-          class="form-input"
+          class="form-input phone-input"
           type="number"
           name="phoneno"
           formControlName="mobile"
+          placeholder="Enter phone number"
         />
-        <button type="button" (click)="removeAtIndex(idx)">Delete</button>
+        <button
+          class="delete-button"
+          type="button"
+          (click)="removeAtIndex(idx)"
+        >
+          Delete
+        </button>
       </div>
     </div>
   </div>
-  <button [disabled]="PhoneForm.invalid" type="submit">Submit</button>
+  <button
+    class="form-button form-button-primary submit-button"
+    [disabled]="PhoneForm.invalid"
+    type="submit"
+  >
+    Submit
+  </button>
 </form>
