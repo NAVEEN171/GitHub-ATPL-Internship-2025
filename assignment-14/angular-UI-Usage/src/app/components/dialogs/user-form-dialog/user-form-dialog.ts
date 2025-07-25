@@ -5,7 +5,7 @@ import {
   MatDialogContent,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -45,8 +45,7 @@ export class UserFormDialog {
   userDetails: FormGroup;
   constructor(
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<UserFormDialog>,
-    private messageContainer: MatSnackBar
+    public dialogRef: MatDialogRef<UserFormDialog>
   ) {
     this.userDetails = this.fb.group({
       name: ['', [Validators.required]],
@@ -56,8 +55,5 @@ export class UserFormDialog {
   }
   closeDialog() {
     this.dialogRef.close(this.userDetails.value);
-    this.messageContainer.open(
-      `details saved ${this.userDetails.value.name} ! Stay tuned `
-    );
   }
 }

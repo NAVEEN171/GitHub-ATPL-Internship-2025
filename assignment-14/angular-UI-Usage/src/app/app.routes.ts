@@ -3,6 +3,8 @@ import { TestButton } from './components/test-button/test-button';
 import { LoginForm } from './components/login-form/login-form';
 import { ToolSideNav } from './components/tool-side-nav/tool-side-nav';
 import { FormDialog } from './components/form-dialog/form-dialog';
+import { Home } from './components/home/home';
+import { Profile } from './components/profile/profile';
 
 export const routes: Routes = [
   { path: '', component: TestButton },
@@ -13,6 +15,10 @@ export const routes: Routes = [
   {
     path: 'navbar',
     component: ToolSideNav,
+    children: [
+      { path: 'home', component: Home },
+      { path: 'profile', component: Profile },
+    ],
   },
   {
     path: 'dialog-demo',

@@ -25,7 +25,7 @@
       <input formControlName="password" matInput type="password" />
     </div>
   </mat-form-field>
-  X @if(userDetails?.controls?.['password']?.touched ||
+  @if(userDetails?.controls?.['password']?.touched ||
   userDetails?.controls?.['password']?.dirty){
   @if(userDetails.get("password")?.errors?.['required']){
   <mat-error mat-error>password is required</mat-error>
