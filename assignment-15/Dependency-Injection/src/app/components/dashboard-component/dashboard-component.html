@@ -1,0 +1,21 @@
+<h1>Weather Report</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>City Name</th>
+      <th>temperature</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ weatherDetails.cityName }}</td>
+      <td>{{ weatherDetails.temperature }}</td>
+      <td>{{ weatherDetails.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>{{ fetchError }}</h1>
+<button (click)="getWeatherDetails()" *ngIf="fetchError">Retry</button>
