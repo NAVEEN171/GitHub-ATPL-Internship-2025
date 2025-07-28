@@ -9,5 +9,5 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'angular-UI-Usage';
+  protected title = 'angular material UI';
 }
