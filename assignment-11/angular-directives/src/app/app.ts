@@ -10,5 +10,5 @@ import { RouterLinkActive } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'angular-directives';
+  protected title = 'angular directives';
 }
