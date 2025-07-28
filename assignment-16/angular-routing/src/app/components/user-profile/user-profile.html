@@ -1,0 +1,31 @@
+<form class="form-container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <h1>Student Registration Form</h1>
+
+  <input
+    formControlName="name"
+    type="text"
+    placeholder="Enter first name"
+    class="form-input"
+  />
+  @if(userForm.controls['name'].dirty || userForm.controls['name'].touched){
+  @if(userForm.get('name')?.errors?.['required']){
+  <div class="error">First name is required</div>
+  } }
+
+  <input
+    formControlName="email"
+    type="email"
+    placeholder="Enter email address"
+    class="form-input"
+  />
+  @if(userForm.controls['email'].dirty || userForm.controls['email'].touched){
+  @if(userForm.get('email')?.errors?.['required']){
+  <div class="error">Email is required</div>
+  } @else if(userForm.get('email')?.errors?.['email']){
+  <div class="error">Please provide a valid email</div>
+  } }
+
+  <button [disabled]="userForm.invalid" type="submit" class="btn-primary">
+    Submit Form
+  </button>
+</form>
