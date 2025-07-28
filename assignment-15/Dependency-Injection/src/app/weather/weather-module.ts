@@ -5,8 +5,8 @@ import { DashboardComponent } from '../components/dashboard-component/dashboard-
 
 @NgModule({
   declarations: [DashboardComponent], // importing
-  imports: [CommonModule], // what modules can be used in this module
+  imports: [CommonModule], // what external modules can be used in this module
   providers: [WeatherService], // services
-  exports: [DashboardComponent], // tells which part of the module is avialble to other module
+  exports: [DashboardComponent], // tells which part of the module is available to other module
 })
 export class WeatherModule {}

@@ -10,5 +10,5 @@ import { WeatherModule } from './weather/weather-module';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'Dependency-Injection';
+  protected title = 'Dependency Injection';
 }
