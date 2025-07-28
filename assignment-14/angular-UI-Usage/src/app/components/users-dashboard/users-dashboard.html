@@ -1,13 +1,4 @@
 <div class="relative">
-  <div *ngIf="showIframe" class="absolute w-full h-3/4 top-2.5 z-100">
-    <div class="flex items-center p-2 justify-between bg-white">
-      <h1 class="font-bold text-lg">Flipkart</h1>
-      <button mat-icon-button (click)="openFlipkartFrame()">
-        <mat-icon>close</mat-icon>
-      </button>
-    </div>
-    <iframe class="h-full w-full" src="https://www.flipkart.com/"></iframe>
-  </div>
   <div *ngIf="users.length">
     <mat-card class="example-card" appearance="outlined">
       <mat-card-header>

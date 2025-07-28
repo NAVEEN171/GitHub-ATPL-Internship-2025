@@ -26,19 +26,11 @@ import { MatButton } from '@angular/material/button';
   templateUrl: './users-dashboard.html',
   styleUrl: './users-dashboard.css',
 })
-export class UsersDashboard implements OnInit {
-  showIframe: boolean = false;
+export class UsersDashboard {
   displayedColumns: string[] = ['uid', 'name', 'city', 'companyName'];
   @Input() users: User[] = [];
   constructor(private flipkart: FlipkartToggle) {}
   openFlipkartFrame() {
     this.flipkart.toggleFlipKart();
-  }
-
-  ngOnInit(): void {
-    this.flipkart.getFlipKartDetails().subscribe({
-      next: (data) => (this.showIframe = data),
-      error: (error) => console.log(error),
-    });
   }
 }

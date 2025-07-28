@@ -1,7 +1,21 @@
-<app-tool-side-nav
-  [events]="routerArray"
-  [needOutlet]="renderOutlet"
-></app-tool-side-nav>
-<div class="min-h-[90vh] w-full flex items-center justify-center">
-  <router-outlet></router-outlet>
+<div class="relative">
+  <app-tool-side-nav
+    [events]="routerArray"
+    [needOutlet]="renderOutlet"
+  ></app-tool-side-nav>
+  <div class="min-h-[90vh] w-full flex items-center justify-center">
+    <router-outlet></router-outlet>
+  </div>
+  <div
+    *ngIf="showIframe"
+    class="absolute h-3/4 w-3/4 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-100"
+  >
+    <div class="flex items-center p-2 justify-between bg-white">
+      <h1 class="font-bold text-lg">Flipkart</h1>
+      <button mat-icon-button (click)="openFlipkartFrame()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <iframe class="h-full w-full" src="https://www.flipkart.com/"></iframe>
+  </div>
 </div>
