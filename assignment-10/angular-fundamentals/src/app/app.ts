@@ -9,5 +9,5 @@ import { UserProfile } from './user-profile/user-profile';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'angular-fundamentals';
+  protected title = 'angular fundamentals';
 }
