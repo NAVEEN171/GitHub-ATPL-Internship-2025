@@ -8,7 +8,11 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>Angular Project</span>
-  <span class="example-spacer"></span>
+  <mat-slide-toggle (click)="toggleTheme()">
+    <p class="toggler">
+      {{ !darkMode ? "turn dark Mode" : "turn light Mode" }}
+    </p></mat-slide-toggle
+  >
 </mat-toolbar>
 
 <mat-sidenav-container class="example-container" autosize>
@@ -24,5 +28,7 @@
   </mat-sidenav>
 </mat-sidenav-container>
 <div class="text-center mt-5 font-bold text-2xl">
-  <router-outlet></router-outlet>
+  <div *ngIf="needOutlet">
+    <router-outlet></router-outlet>
+  </div>
 </div>
