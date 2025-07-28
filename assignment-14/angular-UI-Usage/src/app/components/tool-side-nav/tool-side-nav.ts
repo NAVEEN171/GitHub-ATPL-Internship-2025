@@ -9,6 +9,7 @@ import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FlipkartToggle } from '../../services/flipkart-toggle';
 
 @Component({
   selector: 'app-tool-side-nav',
@@ -35,6 +36,7 @@ export class ToolSideNav {
   ];
   @Input() needOutlet?: boolean = true;
   opened: boolean = true;
+  constructor(private flipkart: FlipkartToggle) {}
   toggleTheme() {
     if (this.darkMode) {
       document.body.classList.remove('dark-theme');
@@ -42,5 +44,8 @@ export class ToolSideNav {
       document.body.classList.add('dark-theme');
     }
     this.darkMode = !this.darkMode;
+  }
+  openFlipkartFrame() {
+    this.flipkart.toggleFlipKart();
   }
 }

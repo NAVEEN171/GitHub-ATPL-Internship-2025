@@ -1,43 +1,54 @@
-<div *ngIf="users.length">
-  <mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title>Hi !</mat-card-title>
-      <mat-card-subtitle>How was your Day?</mat-card-subtitle>
-    </mat-card-header>
+<div class="relative">
+  <div *ngIf="showIframe" class="absolute w-full h-3/4 top-2.5 z-100">
+    <div class="flex items-center p-2 justify-between bg-white">
+      <h1 class="font-bold text-lg">Flipkart</h1>
+      <button mat-icon-button (click)="openFlipkartFrame()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <iframe class="h-full w-full" src="https://www.flipkart.com/"></iframe>
+  </div>
+  <div *ngIf="users.length">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Hi !</mat-card-title>
+        <mat-card-subtitle>How was your Day?</mat-card-subtitle>
+      </mat-card-header>
 
-    <mat-card-content class="min-w-[300px]">
-      <p>Welcome to Users Dashboard!</p>
-    </mat-card-content>
-  </mat-card>
+      <mat-card-content class="min-w-[300px]">
+        <p>Welcome to Users Dashboard!</p>
+      </mat-card-content>
+    </mat-card>
 
-  <table
-    mat-table
-    [dataSource]="users"
-    class="mat-elevation-z8 w-fit min-w-[300px] !block overflow-x-auto"
-  >
-    <ng-container matColumnDef="uid">
-      <th mat-header-cell *matHeaderCellDef>uid.</th>
-      <td mat-cell *matCellDef="let user">{{ user.uid }}</td>
-    </ng-container>
+    <table
+      mat-table
+      [dataSource]="users"
+      class="mat-elevation-z8 w-fit min-w-[300px] !block overflow-x-auto"
+    >
+      <ng-container matColumnDef="uid">
+        <th mat-header-cell *matHeaderCellDef>uid.</th>
+        <td mat-cell *matCellDef="let user">{{ user.uid }}</td>
+      </ng-container>
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let user">{{ user.name }}</td>
-    </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+      </ng-container>
 
-    <ng-container matColumnDef="city">
-      <th mat-header-cell *matHeaderCellDef>City</th>
-      <td mat-cell *matCellDef="let user">{{ user.city }}</td>
-    </ng-container>
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef>City</th>
+        <td mat-cell *matCellDef="let user">{{ user.city }}</td>
+      </ng-container>
 
-    <ng-container matColumnDef="companyName">
-      <th mat-header-cell *matHeaderCellDef>CompanyName</th>
-      <td mat-cell *matCellDef="let user">{{ user.companyName }}</td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-</div>
-<div *ngIf="!users.length">
-  <mat-spinner class="!w-7 !h-7"></mat-spinner>
+      <ng-container matColumnDef="companyName">
+        <th mat-header-cell *matHeaderCellDef>CompanyName</th>
+        <td mat-cell *matCellDef="let user">{{ user.companyName }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <div *ngIf="!users.length">
+    <mat-spinner class="!w-7 !h-7"></mat-spinner>
+  </div>
 </div>

@@ -24,6 +24,15 @@
       @for (e of events; track e) {
       <button type="button" [routerLink]="e.route">{{ e.name }}</button>
       }
+      <div
+        (click)="openFlipkartFrame()"
+        class="m-auto mt-4 cursor-pointer w-[20px] h-[20px]"
+      >
+        <img
+          src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png"
+          alt="flipkart-logo"
+        />
+      </div>
     </div>
   </mat-sidenav>
 </mat-sidenav-container>
