@@ -1,0 +1,39 @@
+<div class="user-details-container">
+  <div class="page-header">
+    <h1 class="main-title">👥 Team Members</h1>
+    <p class="subtitle">Meet our amazing team members and their details</p>
+  </div>
+
+  <div class="members-grid">
+    <div class="member-card" *ngFor="let member of members">
+      <div class="member-info">
+        <div class="avatar-section">
+          <div class="avatar">{{ member.avatar }}</div>
+        </div>
+        <div class="member-details">
+          <h3 class="member-name">{{ member.name }}</h3>
+          <p class="member-position">{{ member.position }}</p>
+          <p class="member-department">{{ member.department }}</p>
+          <div class="contact-info">
+            <p class="member-email">📧 {{ member.email }}</p>
+            <p class="member-phone">📞 {{ member.phone }}</p>
+            <p class="join-date">📅 Joined: {{ member.joinDate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn btn-view" title="View member details">
+          👁️ View
+        </button>
+        <button class="btn btn-edit" title="Edit member profile">
+          ✏️ Edit
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="members.length === 0">
+    <p>No team members found.</p>
+  </div>
+</div>

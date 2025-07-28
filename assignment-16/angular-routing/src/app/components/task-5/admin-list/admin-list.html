@@ -1,0 +1,17 @@
+<div class="admin-container">
+  <h2 class="title">Admin List</h2>
+
+  <div class="admin-list">
+    <div class="admin-card" *ngFor="let admin of admins">
+      <div class="admin-info">
+        <h3 class="admin-name">{{ admin.name }}</h3>
+        <span class="admin-role">{{ admin.role }}</span>
+      </div>
+
+      <div class="admin-actions">
+        <button class="btn-view" (click)="viewAdmin(admin)">View</button>
+        <button class="btn-edit" (click)="editAdmin(admin)">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

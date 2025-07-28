@@ -7,10 +7,11 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './user-profile.html',
   styleUrl: './user-profile.css',
 })
