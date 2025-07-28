@@ -8,5 +8,5 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'angular-pipes';
+  protected title = 'angular pipes';
 }
