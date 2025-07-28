@@ -1,21 +1,25 @@
-<h1>Weather Report</h1>
+<div class="weather-section">
+  <h1 class="weather-header">Weather Report</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>City Name</th>
-      <th>temperature</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{ weatherDetails.cityName }}</td>
-      <td>{{ weatherDetails.temperature }}</td>
-      <td>{{ weatherDetails.description }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>City Name</th>
+        <th>temperature</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="weatherDetails.cityName">
+        <td>{{ weatherDetails.cityName }}</td>
+        <td>{{ weatherDetails.temperature }}</td>
+        <td>{{ weatherDetails.description }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h1>{{ fetchError }}</h1>
-<button (click)="getWeatherDetails()" *ngIf="fetchError">Retry</button>
+  <h1 class="error">{{ fetchError }}</h1>
+  <button class="retry-btn" (click)="getWeatherDetails()" *ngIf="fetchError">
+    Retry
+  </button>
+</div>
