@@ -36,12 +36,4 @@ export class AdminList {
       email: 'james@admin.com',
     },
   ];
-
-  viewAdmin(admin: Admin): void {
-    alert(`Viewing: ${admin.name} (${admin.role})`);
-  }
-
-  editAdmin(admin: Admin): void {
-    alert(`Editing: ${admin.name}`);
-  }
 }

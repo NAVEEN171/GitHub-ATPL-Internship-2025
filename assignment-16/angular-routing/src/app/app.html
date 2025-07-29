@@ -1,27 +1,34 @@
-<div class="h-[50px] px-2 w-full shadow-md">
-  <ul class="flex gap-5 font-bold items-center h-full">
+<div class="h-[50px] px-2 shadow-md w-full overflow-x-auto">
+  <ul class="flex gap-5 font-bold items-center h-full justify-evenly">
     <li><a routerLink="/home" class="cursor-pointer">Home</a></li>
     <li><a routerLink="/about" class="cursor-pointer">About</a></li>
     <li><a routerLink="/contact" class="cursor-pointer">Contact</a></li>
     <li><a routerLink="/dashboard" class="cursor-pointer">Dashboard</a></li>
     <li><a routerLink="/user-profile" class="cursor-pointer">user form</a></li>
     <li>
-      <a routerLink="/admin-access" class="cursor-pointer"
-        >Admin (lazy loading)</a
-      >
+      <a routerLink="/admin-access" class="cursor-pointer">Admin (LL)</a>
     </li>
     <li>
-      <button
-        type="button"
-        class="cursor-pointer"
-        (click)="goToProductIdPage()"
-      >
-        productId (random id generation)
-      </button>
+      <a routerLink="/products"> products </a>
     </li>
     <li>
-      <a routerLink="/user" class="cursor-pointer">users (lazy loading)</a>
+      <a routerLink="/user" class="cursor-pointer">users (LL)</a>
     </li>
+    <div class="role-selector">
+      <select
+        class="role-select border-2 border-black focus:border-blue-500 px-3"
+        id="role"
+        name="role"
+        [(ngModel)]="currentRole"
+        (ngModelChange)="onRoleChange($event)"
+      >
+        <option value="">--select--</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+        <option value="driver">Driver</option>
+      </select>
+    </div>
+
     <li>
       <button
         type="button"

@@ -15,6 +15,7 @@ import { Dashboard } from './components/task-3/dashboard/dashboard';
 import { Settings } from './components/task-3/settings/settings';
 import { Profile } from './components/task-3/profile/profile';
 import { Activity } from './components/task-3/activity/activity';
+import { Products } from './components/task-2/products/products';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -42,6 +43,7 @@ export const routes: Routes = [
       },
     ],
   },
+  { path: 'products', component: Products },
   {
     path: 'user-profile',
     component: UserProfile,

@@ -1,0 +1,16 @@
+<div class="flex flex-col gap-5 w-full items-center py-5">
+  <div class="w-fit shadow-lg rounded-lg" *ngFor="let product of productsList">
+    <img class="w-[300px] h-[250px] rounded-t-lg" [src]="product.image" />
+    <div class="flex flex-col gap-2 py-3 items-center px-3">
+      <h1 class="font-bold">{{ product.name }}</h1>
+      <h1>{{ product.price | currency : "INR" }}</h1>
+      <button
+        [routerLink]="['/products', product.id]"
+        class="w-full bg-blue-400 text-white cursor-pointer rounded-sm font-semibold text-lg"
+        type="button"
+      >
+        View
+      </button>
+    </div>
+  </div>
+</div>
