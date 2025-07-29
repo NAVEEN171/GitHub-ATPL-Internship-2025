@@ -45,7 +45,7 @@
         .addEventListener("submit", (e) => {
           e.preventDefault();
           let cardElement;
-          cardElement = document.querySelector("section");
+          cardElement = document.querySelectorAll("section");
           console.log(cardElement);
           if (cardElement) {
             cardElement.innerHTML = "";

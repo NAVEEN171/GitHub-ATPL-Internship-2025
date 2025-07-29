@@ -1,15 +1,35 @@
-<div class="h-[50px] px-2 py-3 w-full shadow-md">
-  <ul class="flex gap-5 font-bold">
+<div class="h-[50px] px-2 w-full shadow-md">
+  <ul class="flex gap-5 font-bold items-center h-full">
     <li><a routerLink="/home" class="cursor-pointer">Home</a></li>
     <li><a routerLink="/about" class="cursor-pointer">About</a></li>
     <li><a routerLink="/contact" class="cursor-pointer">Contact</a></li>
+    <li><a routerLink="/dashboard" class="cursor-pointer">Dashboard</a></li>
+    <li><a routerLink="/user-profile" class="cursor-pointer">user form</a></li>
     <li>
       <a routerLink="/admin-access" class="cursor-pointer"
         >Admin (lazy loading)</a
       >
     </li>
     <li>
+      <button
+        type="button"
+        class="cursor-pointer"
+        (click)="goToProductIdPage()"
+      >
+        productId (random id generation)
+      </button>
+    </li>
+    <li>
       <a routerLink="/user" class="cursor-pointer">users (lazy loading)</a>
+    </li>
+    <li>
+      <button
+        type="button"
+        class="bg-red-400 text-white px-6 py-2 cursor-pointer"
+        routerLink="/admin"
+      >
+        Admin
+      </button>
     </li>
   </ul>
 </div>

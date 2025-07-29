@@ -1,0 +1,15 @@
+<div class="flex gap-2 h-[calc(100vh-50px)]">
+  <div class="shadow-md w-[150px] h-full">
+    <ul
+      class="flex flex-col gap-4 py-2 items-center text-blue-400 text-lg font-semibold"
+    >
+      <li class="w-fit"><a routerLink="/dashboard">Activity</a></li>
+      <li class="w-fit"><a routerLink="profile">profile</a></li>
+      <li class="w-fit"><a routerLink="settings">settings</a></li>
+    </ul>
+  </div>
+  <section>
+    <p>dashboard</p>
+    <router-outlet></router-outlet>
+  </section>
+</div>

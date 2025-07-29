@@ -11,6 +11,11 @@ import { Contact } from './components/task-1/contact/contact';
 import { ProductDetail } from './components/task-2/product-detail/product-detail';
 import { UserDetails } from './components/task-5/user-details/user-details';
 import { AdminList } from './components/task-5/admin-list/admin-list';
+import { Dashboard } from './components/task-3/dashboard/dashboard';
+import { Settings } from './components/task-3/settings/settings';
+import { Profile } from './components/task-3/profile/profile';
+import { Activity } from './components/task-3/activity/activity';
+
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: Home },
@@ -19,6 +24,24 @@ export const routes: Routes = [
   { path: 'admin', component: Admin, canActivate: [authGuard] },
   { path: 'access-denied', component: AccessDenied },
   { path: 'products/:id', component: ProductDetail },
+  {
+    path: 'dashboard',
+    component: Dashboard,
+    children: [
+      {
+        path: '',
+        component: Activity,
+      },
+      {
+        path: 'profile',
+        component: Profile,
+      },
+      {
+        path: 'settings',
+        component: Settings,
+      },
+    ],
+  },
   {
     path: 'user-profile',
     component: UserProfile,

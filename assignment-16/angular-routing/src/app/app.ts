@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected title = 'angular-routing';
+  constructor(private router: Router) {}
+  goToProductIdPage() {
+    this.router.navigate(['products', this.generateRandomId()]);
+  }
+  generateRandomId() {
+    return Math.floor(Math.random() * 1000) + 1;
+  }
 }
