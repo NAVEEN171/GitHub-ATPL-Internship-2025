@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
-  imports: [ReactiveFormsModule, CommonModule, RouterLink],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './user-profile.html',
   styleUrl: './user-profile.css',
 })
