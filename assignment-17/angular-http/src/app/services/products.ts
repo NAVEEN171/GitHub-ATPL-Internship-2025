@@ -10,6 +10,8 @@ import { ProductForm } from '../models/products';
 export class ProductService {
   private productsList$ = new BehaviorSubject<Product[]>([]);
   selectedProduct: Product | null = null;
+  deletingProduct: boolean = false;
+  private PRODUCTS_API = 'https://cadfb646b95505f240a5.free.beeceptor.com/api';
 
   constructor(private _http: HttpClient) {}
 
@@ -19,23 +21,18 @@ export class ProductService {
 
   uploadOrInsertProduct(formData: ProductForm) {
     if (!this.selectedProduct) {
-      this._http
-        .post(
-          'https://cadfb646b95505f240a5.free.beeceptor.com/api/products',
-          formData
-        )
-        .subscribe({
-          next: () => {
-            this.fetchProducts();
-          },
-          error: (error) => {
-            console.log(error);
-          },
-        });
+      this._http.post(`${this.PRODUCTS_API}/products`, formData).subscribe({
+        next: () => {
+          this.fetchProducts();
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
     } else {
       this._http
         .put(
-          `https://cadfb646b95505f240a5.free.beeceptor.com/api/products/${this.selectedProduct.id}`,
+          `${this.PRODUCTS_API}/products/${this.selectedProduct.id}`,
           formData
         )
         .subscribe({
@@ -51,9 +48,7 @@ export class ProductService {
 
   fetchProducts() {
     return this._http
-      .get<Product[]>(
-        'https://cadfb646b95505f240a5.free.beeceptor.com/api/products'
-      )
+      .get<Product[]>(`${this.PRODUCTS_API}/products`)
       .pipe(
         catchError((error) => {
           console.error(error);
@@ -63,6 +58,9 @@ export class ProductService {
       .subscribe({
         next: (data) => {
           this.productsList$.next(data);
+          if (this.deletingProduct) {
+            this.deletingProduct = false;
+          }
         },
       });
   }
@@ -70,17 +68,14 @@ export class ProductService {
     return this.productsList$;
   }
   deleteProduct(id: string) {
-    this._http
-      .delete(
-        `https://cadfb646b95505f240a5.free.beeceptor.com/api/products/${id}`
-      )
-      .subscribe({
-        next: () => {
-          this.fetchProducts();
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+    this.deletingProduct = true;
+    this._http.delete(`${this.PRODUCTS_API}/products/${id}`).subscribe({
+      next: () => {
+        this.fetchProducts();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }
