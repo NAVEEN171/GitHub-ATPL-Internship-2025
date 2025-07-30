@@ -36,7 +36,11 @@
     class="form-input"
   />
 
-  <button [disabled]="productForm.invalid" type="submit" class="btn-primary">
+  <button
+    [disabled]="productForm.invalid || (isSubmitting$ | async)"
+    type="submit"
+    class="btn-primary"
+  >
     Submit Form
   </button>
 </form>

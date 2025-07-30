@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, catchError, of } from 'rxjs';
+import { BehaviorSubject, catchError, finalize, of } from 'rxjs';
 import { Product } from '../models/products';
 import { ProductForm } from '../models/products';
 
@@ -10,8 +10,9 @@ import { ProductForm } from '../models/products';
 export class ProductService {
   private productsList$ = new BehaviorSubject<Product[]>([]);
   selectedProduct: Product | null = null;
+  isLoading = new BehaviorSubject<boolean>(false);
   deletingProduct: boolean = false;
-  private PRODUCTS_API = 'https://cadfb646b95505f240a5.free.beeceptor.com/api';
+  private PRODUCTS_API = 'https://ca187db1542bc916ae4d.free.beeceptor.com/api';
 
   constructor(private _http: HttpClient) {}
 
@@ -20,20 +21,33 @@ export class ProductService {
   }
 
   uploadOrInsertProduct(formData: ProductForm) {
+    this.isLoading.next(true);
     if (!this.selectedProduct) {
-      this._http.post(`${this.PRODUCTS_API}/products`, formData).subscribe({
-        next: () => {
-          this.fetchProducts();
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+      this._http
+        .post(`${this.PRODUCTS_API}/products`, formData)
+        .pipe(
+          finalize(() => {
+            this.isLoading.next(false);
+          })
+        )
+        .subscribe({
+          next: () => {
+            this.fetchProducts();
+          },
+          error: (error) => {
+            console.log(error);
+          },
+        });
     } else {
       this._http
         .put(
           `${this.PRODUCTS_API}/products/${this.selectedProduct.id}`,
           formData
+        )
+        .pipe(
+          finalize(() => {
+            this.isLoading.next(false);
+          })
         )
         .subscribe({
           next: () => {

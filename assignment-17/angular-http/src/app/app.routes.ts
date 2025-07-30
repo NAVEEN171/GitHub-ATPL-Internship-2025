@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { ProductForm } from './components/product-form/product-form';
 import { ProductsList } from './components/products-list/products-list';
+import { Task2 } from './components/task-2/task-2';
+import { LoginForm } from './components/task-4/login-form/login-form';
 
 export const routes: Routes = [
   {
@@ -8,4 +10,6 @@ export const routes: Routes = [
     component: ProductForm,
   },
   { path: '', component: ProductsList },
+  { path: 'simulate-error', component: Task2 },
+  { path: 'login', component: LoginForm },
 ];
