@@ -1,0 +1,42 @@
+<form class="form-container" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <h1>Add New Product</h1>
+
+  <input
+    formControlName="name"
+    type="text"
+    placeholder="Enter product name"
+    class="form-input"
+  />
+  @if(productForm.controls['name'].dirty ||
+  productForm.controls['name'].touched){
+  @if(productForm.get('name')?.errors?.['required']){
+  <div class="error">Product name is required</div>
+  } @else if(productForm.get('name')?.errors?.['minlength']){
+  <div class="error">product Name should be minimum 5 characters</div>
+  } }
+
+  <input
+    formControlName="price"
+    type="number"
+    placeholder="Enter last name"
+    class="form-input"
+  />
+  @if(productForm.controls['price'].dirty ||
+  productForm.controls['price'].touched){
+  @if(productForm.get('price')?.errors?.['required']){
+  <div class="error">Price is required</div>
+  } @else if(productForm.get('price')?.errors?.['min']){
+  <div class="error">minimum price is 500</div>
+  }}
+
+  <input
+    formControlName="image"
+    type="email"
+    placeholder="Product Image"
+    class="form-input"
+  />
+
+  <button [disabled]="productForm.invalid" type="submit" class="btn-primary">
+    Submit Form
+  </button>
+</form>

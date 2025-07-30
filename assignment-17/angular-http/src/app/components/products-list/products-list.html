@@ -1,0 +1,39 @@
+<div class="flex flex-col gap-5 w-full items-center py-5">
+  <h1 class="font-bold text-2xl">Products List</h1>
+  <div>
+    <button
+      class="bg-green-500 text-white rounded-lg font-semibold text-lg px-4 py-2 cursor-pointer"
+      (click)="addNewProduct()"
+    >
+      Add new Product
+    </button>
+  </div>
+  <div class="w-fit shadow-lg rounded-lg" *ngFor="let product of products">
+    <img
+      class="w-[300px] h-[250px] rounded-t-lg"
+      [src]="
+        product?.image
+          ? product.image
+          : 'https://answers-afd.microsoft.com/static/images/image-not-found.jpg'
+      "
+    />
+    <div class="flex flex-col gap-2 py-3 items-center px-3">
+      <h1 class="font-bold">{{ product.name }}</h1>
+      <h1>{{ product.price | currency : "INR" }}</h1>
+      <button
+        (click)="editProduct(product)"
+        class="w-full bg-blue-400 text-white cursor-pointer rounded-sm font-semibold text-lg"
+        type="button"
+      >
+        Edit
+      </button>
+      <button
+        (click)="deleteProduct(product.id)"
+        class="w-full bg-red-400 text-white cursor-pointer rounded-sm font-semibold text-lg"
+        type="button"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
