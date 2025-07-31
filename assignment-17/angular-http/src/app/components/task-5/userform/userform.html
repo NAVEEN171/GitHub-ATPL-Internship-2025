@@ -1,0 +1,28 @@
+<form class="form-container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <h1>User Form</h1>
+
+  <input
+    formControlName="name"
+    type="text"
+    placeholder="Enter product name"
+    class="form-input"
+  />
+  @if(userForm.controls['name'].dirty || userForm.controls['name'].touched){
+  @if(userForm.get('name')?.errors?.['required']){
+  <div class="error">Product name is required</div>
+  } @else if(userForm.get('name')?.errors?.['minlength']){
+  <div class="error">product Name should be minimum 5 characters</div>
+  } }
+
+  <input formControlName="role" placeholder="Enter role" class="form-input" />
+  @if(userForm.controls['role'].dirty || userForm.controls['role'].touched){
+  @if(userForm.get('role')?.errors?.['required']){
+  <div class="error">Role is required</div>
+  } @else if(userForm.get('role')?.errors?.['minLength']){
+  <div class="error">Role should be minimum of 5 characters</div>
+  }}
+
+  <button [disabled]="userForm.invalid" type="submit" class="btn-primary">
+    Submit Form
+  </button>
+</form>

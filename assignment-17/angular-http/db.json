@@ -2,15 +2,9 @@
   "Products": [
     {
       "name": "Laptop Maggg",
-      "price": 670000,
+      "price": 6700,
       "image": "https://cdn.mos.cms.futurecdn.net/Gw3Se82bvppoJsHc4rCVsQ.jpg",
       "id": 1
-    },
-    {
-      "id": 2,
-      "name": "One Plus",
-      "price": 50000,
-      "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/337487291/EC/WR/UP/189620676/oneplus-nord-ce-3-5g.jpg"
     }
   ],
   "Users": [
@@ -21,13 +15,18 @@
     },
     {
       "name": "Dileep",
-      "id": 2,
-      "role": "INTERN"
+      "role": "FULL_TIME",
+      "id": 2
     },
     {
       "name": "MAHESH",
       "id": 3,
       "role": "FULL_TIME"
+    },
+    {
+      "name": "DIvya",
+      "role": "TRAINEE",
+      "id": 4
     }
   ]
 }

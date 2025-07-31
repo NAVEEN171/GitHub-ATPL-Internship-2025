@@ -5,6 +5,8 @@ import { Task2 } from './components/task-2/task-2';
 import { LoginForm } from './components/task-4/login-form/login-form';
 import { Products } from './components/task-5/products/products';
 import { Productsform } from './components/task-5/productsform/productsform';
+import { Users } from './components/task-5/users/users';
+import { Userform } from './components/task-5/userform/userform';
 
 export const routes: Routes = [
   {
@@ -15,5 +17,9 @@ export const routes: Routes = [
   { path: 'simulate-error', component: Task2 },
   { path: 'login', component: LoginForm },
   { path: 'products', component: Products },
-  { path: 'Productsform/:id', component: Productsform },
+  { path: 'products/:id', component: Productsform },
+  { path: 'products/add-new', component: Productsform },
+  { path: 'users', component: Users },
+  { path: 'users/:id', component: Userform },
+  { path: 'users/add-new', component: Userform },
 ];
