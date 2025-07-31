@@ -11,12 +11,6 @@
       "name": "One Plus",
       "price": 50000,
       "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/337487291/EC/WR/UP/189620676/oneplus-nord-ce-3-5g.jpg"
-    },
-    {
-      "name": "gdfgfdg",
-      "price": 30000,
-      "image": "http://localhost:4200/simulate-error",
-      "id": 3
     }
   ],
   "Users": [

@@ -1,21 +1,8 @@
 <form class="form-container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <h1>Add New Product</h1>
+  <h1>Login</h1>
 
   <input
-    formControlName="name"
-    type="text"
-    placeholder="Enter product name"
-    class="form-input"
-  />
-  @if(userForm.controls['name'].dirty || userForm.controls['name'].touched){
-  @if(userForm.get('name')?.errors?.['required']){
-  <div class="error">name is required</div>
-  } @else if(userForm.get('name')?.errors?.['minlength']){
-  <div class="error">Name should be minimum 5 characters</div>
-  } }
-
-  <input
-    formControlName="email"
+    formControlpassword="email"
     type="email"
     placeholder="Enter email"
     class="form-input"
@@ -26,6 +13,20 @@
   } @else if(userForm.get('email')?.errors?.['email']){
   <div class="error">email is not valid!</div>
   }}
+
+  <input
+    formControlpassword="password"
+    type="text"
+    placeholder="Enter password"
+    class="form-input"
+  />
+  @if(userForm.controls['password'].dirty ||
+  userForm.controls['password'].touched){
+  @if(userForm.get('password')?.errors?.['required']){
+  <div class="error">password is required</div>
+  } @else if(userForm.get('password')?.errors?.['minlength']){
+  <div class="error">password should be minimum 5 characters</div>
+  } }
 
   <button [disabled]="userForm.invalid" type="submit" class="btn-primary">
     Login
