@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService extends ApiServiceGeneric<User> {
+export class UserGenericService extends ApiServiceGeneric<User> {
   constructor(_http: HttpClient) {
     super(_http, '  http://localhost:3000/Users');
   }

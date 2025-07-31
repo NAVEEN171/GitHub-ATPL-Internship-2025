@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsServiceGeneric } from '../../../services/products-service';
+import { ProductsGenericService } from '../../../services/products-service';
 import { Product } from '../../../models/products';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -13,12 +13,12 @@ export class Products implements OnInit {
   productsList: Product[] = [];
 
   constructor(
-    private ProductsServiceGeneric: ProductsServiceGeneric,
+    private ProductsGenericService: ProductsGenericService,
     private router: Router
   ) {}
 
   getProducts() {
-    this.ProductsServiceGeneric.getAll().subscribe((data) => {
+    this.ProductsGenericService.getAll().subscribe((data) => {
       this.productsList = data;
       console.log(data);
     });

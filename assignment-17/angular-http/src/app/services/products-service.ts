@@ -6,7 +6,7 @@ import { Product } from '../models/products';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductsService extends ApiServiceGeneric<Product> {
+export class ProductsGenericService extends ApiServiceGeneric<Product> {
   constructor(_http: HttpClient) {
     super(_http, 'http://localhost:3000/Products');
   }
