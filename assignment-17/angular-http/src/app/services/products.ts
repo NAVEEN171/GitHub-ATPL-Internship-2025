@@ -122,7 +122,7 @@ export class ProductService {
     return this.productsList$;
   }
 
-  deleteProduct(id: string): Observable<object> {
+  deleteProduct(id: number): Observable<object> {
     return this._http.delete(`${this.PRODUCTS_API}/products/${id}`);
   }
 }

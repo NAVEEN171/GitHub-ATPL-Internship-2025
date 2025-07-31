@@ -28,7 +28,7 @@ export class ProductsList implements OnInit, OnDestroy {
     this.router.navigate(['/form']);
   }
 
-  deleteProduct(id: string) {
+  deleteProduct(id: number) {
     this.productservice.deleteProduct(id);
   }
   ngOnInit(): void {

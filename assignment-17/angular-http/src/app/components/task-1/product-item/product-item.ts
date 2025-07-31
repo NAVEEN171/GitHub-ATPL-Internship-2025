@@ -23,7 +23,7 @@ export class ProductItem implements OnDestroy {
     this.router.navigate(['/form']);
   }
 
-  deleteProduct(id: string) {
+  deleteProduct(id: number) {
     this.isDeleting = true;
     this.deleteSubscription = this.productservice.deleteProduct(id).subscribe({
       next: (data: any) => {
