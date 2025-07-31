@@ -3,30 +3,36 @@
   <nav class="flex gap-4 p-4 bg-gray-100 shadow-md">
     <button
       routerLink="/"
+      routerLinkActive="active-nav-button"
+      [routerLinkActiveOptions]="{ exact: true }"
       class="px-4 py-2 cursor-pointer bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors duration-200 font-medium shadow-sm"
     >
       Task1
     </button>
     <button
       routerLink="/simulate-error"
+      routerLinkActive="active-nav-button"
       class="px-4 py-2 cursor-pointer bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors duration-200 font-medium shadow-sm"
     >
       Task2
     </button>
     <button
       routerLink="/login"
+      routerLinkActive="active-nav-button"
       class="px-4 py-2 cursor-pointer bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors duration-200 font-medium shadow-sm"
     >
       Task4
     </button>
     <button
       routerLink="/products"
+      routerLinkActive="active-nav-button"
       class="px-4 py-2 cursor-pointer bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors duration-200 font-medium shadow-sm"
     >
       Task5: Products
     </button>
     <button
       routerLink="/users"
+      routerLinkActive="active-nav-button"
       class="px-4 py-2 cursor-pointer bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors duration-200 font-medium shadow-sm"
     >
       Task5: Users

@@ -1,10 +1,16 @@
 {
   "Products": [
     {
-      "name": "Laptop Maggg",
+      "name": "Lenovo Laptop ",
       "price": 6700,
       "image": "https://cdn.mos.cms.futurecdn.net/Gw3Se82bvppoJsHc4rCVsQ.jpg",
       "id": 1
+    },
+    {
+      "name": "AC Daikin",
+      "price": 750000,
+      "image": "",
+      "id": 2
     }
   ],
   "Users": [
@@ -22,11 +28,6 @@
       "name": "MAHESH",
       "id": 3,
       "role": "FULL_TIME"
-    },
-    {
-      "name": "DIvya",
-      "role": "TRAINEE",
-      "id": 4
     }
   ]
 }

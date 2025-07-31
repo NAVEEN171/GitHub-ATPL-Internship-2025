@@ -11,7 +11,7 @@ function logRequest(method: string, url: string, headers: any, body: any) {
   console.log(' Method:', method);
   console.log(' URL:', url);
   console.log(' Headers:', headers);
-  if (body) console.log('📦 Body:', body);
+  if (body) console.log(' Body:', body);
   console.log('');
 }
 function logResponse(method: string, url: string, status: number, body: any) {
@@ -28,7 +28,15 @@ function logError(method: string, url: string, status: number, error: any) {
 }
 
 export const loggingInterceptor: HttpInterceptorFn = (req, next) => {
-  logRequest(req.method, req.url, req.headers, req.body);
+  logRequest(
+    req.method,
+    req.url,
+    req.headers.keys().reduce((acc, key) => {
+      acc[key] = req.headers.get(key);
+      return acc;
+    }, {} as any),
+    req.body
+  );
 
   return next(req).pipe(
     tap((event) => {
