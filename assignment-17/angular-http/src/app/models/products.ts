@@ -10,3 +10,12 @@ export interface ProductForm {
   image?: string;
   price: number;
 }
+export enum PopupActions {
+  SUCCESS = 'success',
+  ERROR = 'error',
+  NONE = '',
+}
+export interface Popup {
+  action: PopupActions;
+  message: string;
+}

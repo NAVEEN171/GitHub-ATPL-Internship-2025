@@ -1,20 +1,55 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, catchError, finalize, of } from 'rxjs';
+import { BehaviorSubject, catchError, finalize, Observable, of } from 'rxjs';
 import { Product } from '../models/products';
 import { ProductForm } from '../models/products';
+import { Router } from '@angular/router';
+import { Popup } from '../models/products';
+import { PopupActions } from '../models/products';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  private PRODUCTS_API = 'http://localhost:3000';
   private productsList$ = new BehaviorSubject<Product[]>([]);
   selectedProduct: Product | null = null;
   isLoading = new BehaviorSubject<boolean>(false);
-  deletingProduct: boolean = false;
-  private PRODUCTS_API = 'https://ca187db1542bc916ae4d.free.beeceptor.com/api';
+  initialData = {
+    action: PopupActions.NONE,
+    message: '',
+  };
+  popupDetails = new BehaviorSubject<Popup>(this.initialData);
 
-  constructor(private _http: HttpClient) {}
+  clearMessage() {
+    this.popupDetails.next(this.initialData);
+  }
+  waitAndClearMessage() {
+    setTimeout(() => {
+      this.clearMessage();
+    }, 4000);
+  }
+
+  setMessage(type: string, message: string) {
+    if (this.popupDetails.value.action) {
+      this.clearMessage();
+    }
+    if (type === 'success') {
+      this.popupDetails.next({
+        action: PopupActions.SUCCESS,
+        message,
+      });
+      this.waitAndClearMessage();
+    } else if ((type = 'danger')) {
+      this.popupDetails.next({
+        action: PopupActions.ERROR,
+        message,
+      });
+      this.waitAndClearMessage();
+    }
+  }
+
+  constructor(private _http: HttpClient, private router: Router) {}
 
   setProduct(tempProduct: Product | null) {
     this.selectedProduct = tempProduct;
@@ -28,14 +63,18 @@ export class ProductService {
         .pipe(
           finalize(() => {
             this.isLoading.next(false);
+            this.router.navigate(['/']);
           })
         )
         .subscribe({
           next: () => {
             this.fetchProducts();
+
+            this.setMessage('success', 'New Product Successfully added');
           },
           error: (error) => {
             console.log(error);
+            this.setMessage('danger', 'Product Additon Failed!');
           },
         });
     } else {
@@ -47,14 +86,17 @@ export class ProductService {
         .pipe(
           finalize(() => {
             this.isLoading.next(false);
+            this.router.navigate(['/']);
           })
         )
         .subscribe({
           next: () => {
             this.fetchProducts();
+            this.setMessage('success', ' Product Successfully updated');
           },
           error: (error) => {
             console.log(error);
+            this.setMessage('danger', 'Product Updation Failed!');
           },
         });
     }
@@ -72,24 +114,15 @@ export class ProductService {
       .subscribe({
         next: (data) => {
           this.productsList$.next(data);
-          if (this.deletingProduct) {
-            this.deletingProduct = false;
-          }
         },
       });
   }
+
   getProducts() {
     return this.productsList$;
   }
-  deleteProduct(id: string) {
-    this.deletingProduct = true;
-    this._http.delete(`${this.PRODUCTS_API}/products/${id}`).subscribe({
-      next: () => {
-        this.fetchProducts();
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+
+  deleteProduct(id: string): Observable<object> {
+    return this._http.delete(`${this.PRODUCTS_API}/products/${id}`);
   }
 }

@@ -1,5 +1,5 @@
 <form class="form-container" [formGroup]="productForm" (ngSubmit)="onSubmit()">
-  <h1>Add New Product</h1>
+  <h1>{{ isUpdating ? "update Product" : "Add New Product" }}</h1>
 
   <input
     formControlName="name"
@@ -37,10 +37,10 @@
   />
 
   <button
-    [disabled]="productForm.invalid || (isSubmitting$ | async)"
+    [disabled]="productForm.invalid || isSubmitting"
     type="submit"
     class="btn-primary"
   >
-    Submit Form
+    {{ !isSubmitting ? "Submit Form" : "Submitting..." }}
   </button>
 </form>

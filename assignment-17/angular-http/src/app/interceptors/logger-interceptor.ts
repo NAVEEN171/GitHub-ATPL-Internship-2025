@@ -6,51 +6,38 @@ import {
 import { tap, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
-const logger = {
-  request: (method: string, url: string, headers: any, body: any) => {
-    console.group(` HTTP Request: ${method} ${url}`);
-    console.log(' Method:', method);
-    console.log(' URL:', url);
-    console.log(' Headers:', headers);
-    if (body) console.log('📦 Body:', body);
-    console.groupEnd();
-  },
-
-  response: (method: string, url: string, status: number, body: any) => {
-    console.group(` HTTP Response: ${method} ${url}`);
-    console.log('Status:', status);
-    console.log(' Response Body:', body);
-    console.groupEnd();
-  },
-
-  error: (method: string, url: string, status: number, error: any) => {
-    console.group(` HTTP Error: ${method} ${url}`);
-    console.log(' Status:', status);
-    console.log(' Error:', error);
-    console.groupEnd();
-  },
-};
+function logRequest(method: string, url: string, headers: any, body: any) {
+  console.log(` HTTP Request: ${method} ${url}`);
+  console.log(' Method:', method);
+  console.log(' URL:', url);
+  console.log(' Headers:', headers);
+  if (body) console.log('📦 Body:', body);
+  console.log('');
+}
+function logResponse(method: string, url: string, status: number, body: any) {
+  console.log(` HTTP Response: ${method} ${url}`);
+  console.log('Status:', status);
+  console.log(' Response Body:', body);
+  console.log('');
+}
+function logError(method: string, url: string, status: number, error: any) {
+  console.log(` HTTP Error: ${method} ${url}`);
+  console.log(' Status:', status);
+  console.log(' Error:', error);
+  console.log('');
+}
 
 export const loggingInterceptor: HttpInterceptorFn = (req, next) => {
-  console.log(req.headers);
-  logger.request(
-    req.method,
-    req.url,
-    req.headers.keys().reduce((headers: any, key) => {
-      headers[key] = req.headers.get(key);
-      return headers;
-    }, {}),
-    req.body
-  );
+  logRequest(req.method, req.url, req.headers, req.body);
 
   return next(req).pipe(
     tap((event) => {
       if (event instanceof HttpResponse) {
-        logger.response(req.method, req.url, event.status, event.body);
+        logResponse(req.method, req.url, event.status, event.body);
       }
     }),
     catchError((error: HttpErrorResponse) => {
-      logger.error(req.method, req.url, error.status, error.message);
+      logError(req.method, req.url, error.status, error.message);
       return throwError(() => error);
     })
   );

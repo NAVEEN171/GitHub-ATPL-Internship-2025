@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/products';
+import { ProductService } from '../../../services/products';
 import {
   FormArray,
   FormBuilder,
@@ -8,7 +8,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-form',
@@ -18,7 +17,8 @@ import { Observable } from 'rxjs';
 })
 export class ProductForm implements OnInit {
   productForm: FormGroup;
-  isSubmitting$!: Observable<boolean>;
+  isSubmitting!: boolean;
+  isUpdating: boolean = false;
 
   constructor(private fb: FormBuilder, private Productservice: ProductService) {
     this.productForm = this.fb.group({
@@ -32,7 +32,9 @@ export class ProductForm implements OnInit {
     this.Productservice.uploadOrInsertProduct(this.productForm.value);
   }
   ngOnInit(): void {
-    this.isSubmitting$ = this.Productservice.isLoading;
+    this.Productservice.isLoading.subscribe((data) => {
+      this.isSubmitting = data;
+    });
 
     if (this.Productservice.selectedProduct) {
       let currentProduct = this.Productservice.selectedProduct;
@@ -41,6 +43,7 @@ export class ProductForm implements OnInit {
         price: currentProduct.price,
         image: currentProduct?.image,
       });
+      this.isUpdating = true;
     }
   }
 }

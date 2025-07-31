@@ -1,0 +1,29 @@
+<div>
+  <img
+    class="w-[300px] h-[250px] rounded-t-lg"
+    [src]="
+      productItem.image
+        ? productItem.image
+        : 'https://answers-afd.microsoft.com/static/images/image-not-found.jpg'
+    "
+  />
+  <div class="flex flex-col gap-2 py-3 items-center px-3">
+    <h1 class="font-bold">{{ productItem.name }}</h1>
+    <h1>{{ productItem.price | currency : "INR" }}</h1>
+    <button
+      (click)="editProduct(productItem)"
+      class="w-full bg-blue-400 text-white cursor-pointer rounded-sm font-semibold text-lg"
+      type="button"
+    >
+      Edit
+    </button>
+    <button
+      (click)="deleteProduct(productItem.id)"
+      [disabled]="isDeleting"
+      class="w-full bg-red-400 text-white cursor-pointer rounded-sm font-semibold text-lg disabled:bg-gray-200 disabled:text-black disabled:cursor-not-allowed"
+      type="button"
+    >
+      {{ isDeleting ? "deleting..." : "Delete" }}
+    </button>
+  </div>
+</div>
