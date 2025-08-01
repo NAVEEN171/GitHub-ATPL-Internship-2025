@@ -22,3 +22,9 @@
 .active-nav-button {
   background-color: rgb(70, 185, 70);
 }
+.outlet-area {
+  min-height: calc(100% - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

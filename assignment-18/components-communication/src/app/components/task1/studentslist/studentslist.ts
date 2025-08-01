@@ -3,7 +3,7 @@ import { Students } from '../students/students';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-studentslist',
+  selector: 'app-students-list',
   imports: [Students],
   templateUrl: './studentslist.html',
   styleUrl: './studentslist.css',

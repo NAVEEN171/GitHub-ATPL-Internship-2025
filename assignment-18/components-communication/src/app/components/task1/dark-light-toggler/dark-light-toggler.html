@@ -5,14 +5,21 @@
 >
   <h1>Theme Toggler</h1>
 
-  <select class="border" formControlName="theme">
+  <select class="form-select" formControlName="theme">
     <option value="">--select--</option>
     <option value="light">Light</option>
     <option value="dark">Dark</option>
   </select>
 
-  <button [disabled]="preferredTheme.invalid" type="submit" class="btn-primary">
+  <button
+    class="btn-primary"
+    [disabled]="preferredTheme.invalid"
+    type="submit"
+    class="btn-primary"
+  >
     Submit
   </button>
-  <button (click)="clearTheme()" type="button">clear Theme</button>
+  <button class="btn-danger" (click)="clearTheme()" type="button">
+    clear Theme
+  </button>
 </form>

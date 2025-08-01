@@ -1,8 +1,10 @@
-<h1>Parent Component</h1>
+<div>
+  <h1>Parent Component</h1>
 
-{{ this.currentUser }}
+  {{ this.currentUser }}
 
-<app-students
-  [students]="studentsList"
-  (notifyParent)="notify($event)"
-></app-students>
+  <app-students
+    [students]="studentsList"
+    (notifyParent)="notify($event)"
+  ></app-students>
+</div>
