@@ -1,0 +1,29 @@
+<form class="form-container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <h1>Login</h1>
+  <button type="button" (click)="handleLogout()">logout</button>
+
+  <input formControlName="name" placeholder="Enter name" class="form-input" />
+  @if(userForm.controls['name'].dirty || userForm.controls['name'].touched){
+  @if(userForm.get('name')?.errors?.['required']){
+  <div class="error">name is required</div>
+  } }
+
+  <input
+    formControlName="password"
+    type="password"
+    placeholder="Enter password"
+    class="form-input"
+  />
+  @if(userForm.controls['password'].dirty ||
+  userForm.controls['password'].touched){
+  @if(userForm.get('password')?.errors?.['required']){
+  <div class="error">password is required</div>
+  } @else if(userForm.get('password')?.errors?.['minlength']){
+  <div class="error">password should be minimum 5 characters</div>
+  } }
+
+  <button [disabled]="userForm.invalid" type="submit" class="btn-primary">
+    Login
+  </button>
+</form>
+<h1>{{ welcomeMessage }}</h1>

@@ -1,0 +1,18 @@
+<form
+  class="form-container"
+  [formGroup]="preferredTheme"
+  (ngSubmit)="onSubmit()"
+>
+  <h1>Theme Toggler</h1>
+
+  <select formControlName="theme">
+    <option value="">--select--</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+
+  <button [disabled]="preferredTheme.invalid" type="submit" class="btn-primary">
+    Update Form
+  </button>
+  <button (click)="clearTheme()" type="button">clear Theme</button>
+</form>

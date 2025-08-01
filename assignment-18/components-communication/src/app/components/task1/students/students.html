@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container>
+      <tr *ngFor="let student of students">
+        <th>{{ student }}</th>
+        <th>
+          <input
+            class="student-check-box"
+            type="checkbox"
+            (click)="onCheckBoxChange($event, student)"
+          />
+        </th>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
