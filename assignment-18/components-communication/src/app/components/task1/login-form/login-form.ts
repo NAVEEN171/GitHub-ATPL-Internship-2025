@@ -13,7 +13,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginForm implements OnInit {
   userForm: FormGroup;
   welcomeMessage: string = '';
-  userName: string | null = null;
 
   constructor(private fb: FormBuilder) {
     this.userForm = this.fb.group({
@@ -21,12 +20,15 @@ export class LoginForm implements OnInit {
       name: ['', [Validators.required]],
     });
   }
-  constructMessage(name: string) {
-    return `Hello ${name} ! How Was Your Day!`;
+  constructMessage(name: string | null) {
+    if (!name) {
+      return '';
+    }
+    return `Hello ${name} ! How Was Your Day?`;
   }
   handleLogout() {
     this.welcomeMessage = '';
-    this.userName = null;
+
     sessionStorage.removeItem('username');
   }
   onSubmit() {
@@ -36,9 +38,8 @@ export class LoginForm implements OnInit {
     sessionStorage.setItem('username', this.userForm.value.name);
   }
   ngOnInit(): void {
-    this.userName = sessionStorage.getItem('username');
-    if (this.userName) {
-      this.welcomeMessage = this.constructMessage(this.userName);
-    }
+    this.welcomeMessage = this.constructMessage(
+      sessionStorage.getItem('username')
+    );
   }
 }

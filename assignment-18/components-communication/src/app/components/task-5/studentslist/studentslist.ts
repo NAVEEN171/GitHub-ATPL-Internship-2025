@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Students } from '../students/students';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Students } from '../students/students';
 
 @Component({
   selector: 'app-studentslist',
@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './studentslist.html',
   styleUrl: './studentslist.css',
 })
-export class Studentslist {
+export class StudentslistParent {
   currentUser: string = '';
   constructor(private snackBar: MatSnackBar) {}
   studentsList = ['Dileep', 'Naveen', 'Mahesh', 'Divya'];

@@ -1,6 +1,8 @@
 <form class="form-container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
   <h1>Login</h1>
-  <button type="button" (click)="handleLogout()">logout</button>
+  <button class="btn-danger" type="button" (click)="handleLogout()">
+    logout
+  </button>
 
   <input formControlName="name" placeholder="Enter name" class="form-input" />
   @if(userForm.controls['name'].dirty || userForm.controls['name'].touched){
@@ -26,4 +28,4 @@
     Login
   </button>
 </form>
-<h1>{{ welcomeMessage }}</h1>
+<h1 class="msg">{{ welcomeMessage }}</h1>

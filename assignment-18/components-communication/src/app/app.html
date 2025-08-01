@@ -1,1 +1,32 @@
+<nav class="navbar">
+  <button
+    routerLink="/"
+    routerLinkActive="active-nav-button"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="route-btn"
+  >
+    communication
+  </button>
+  <button
+    class="route-btn"
+    routerLink="/toggler"
+    routerLinkActive="active-nav-button"
+  >
+    Local Storage
+  </button>
+  <button
+    class="route-btn"
+    routerLink="/login"
+    routerLinkActive="active-nav-button"
+  >
+    Session Storage
+  </button>
+  <button
+    class="route-btn"
+    routerLink="/app"
+    routerLinkActive="active-nav-button"
+  >
+    App
+  </button>
+</nav>
 <router-outlet />

@@ -1,0 +1,24 @@
+.navbar {
+  height: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0px 20px;
+}
+.route-btn {
+  background-color: rgb(8, 151, 85);
+  color: white;
+  height: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+
+  font-weight: 500;
+  cursor: pointer;
+}
+.active-nav-button {
+  background-color: rgb(70, 185, 70);
+}
