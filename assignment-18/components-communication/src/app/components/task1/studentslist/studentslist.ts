@@ -15,7 +15,7 @@ export class Studentslist {
   notification: string = '';
   notify(message: string) {
     this.notification = message;
-    console.log(message);
+
     this.currentUser = message;
     this.snackBar.open(message, 'hide', {
       duration: 3000,
