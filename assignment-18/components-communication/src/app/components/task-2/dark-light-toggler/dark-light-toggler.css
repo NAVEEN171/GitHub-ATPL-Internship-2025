@@ -1,0 +1,56 @@
+/* Minimal Theme Form Styles */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-width: 300px;
+}
+
+.form-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.btn-primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
