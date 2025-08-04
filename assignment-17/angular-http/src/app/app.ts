@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'angular-http';
+  protected title = 'HTTP Methods';
 }
