@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class App {
   currentRole: string = '';
-  protected title = 'angular-routing';
+  protected title = 'angular routing';
   constructor(private router: Router, private roleServiceData: RoleService) {}
   onRoleChange(newRole: string) {
     this.roleServiceData.changeRole(newRole);
