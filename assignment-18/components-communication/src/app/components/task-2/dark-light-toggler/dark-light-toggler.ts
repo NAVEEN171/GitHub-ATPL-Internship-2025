@@ -30,6 +30,7 @@ export class DarkLightToggler implements OnInit {
     if (!value) {
       return;
     }
+    this.preferredTheme.get('theme')?.setValue(value);
     if (value === 'light') {
       if (document.body.classList.contains('dark-mode')) {
         document.body.classList.remove('dark-mode');

@@ -1,25 +1,26 @@
-<h2>Child Component</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container>
-      <tr *ngFor="let student of students">
-        <th>{{ student }}</th>
-        <th>
-          <input
-            class="student-check-box"
-            [checked]="selectedStudent === student"
-            type="checkbox"
-            (click)="onCheckBoxChange($event, student)"
-          />
-        </th>
+<div class="student-table-container">
+  <h2 class="student-table-title">Child Component</h2>
+  <table class="student-table">
+    <thead class="student-table-header">
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
       </tr>
-    </ng-container>
-  </tbody>
-</table>
+    </thead>
+    <tbody class="student-table-body">
+      <ng-container>
+        <tr class="student-row" *ngFor="let student of students">
+          <td class="student-name-cell">{{ student }}</td>
+          <td class="student-action-cell">
+            <input
+              class="student-check-box"
+              [checked]="selectedStudent === student"
+              type="checkbox"
+              (click)="onCheckBoxChange($event, student)"
+            />
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
