@@ -1,0 +1,10 @@
+<nz-input-group
+  #inputElement
+  class="debouncing-input"
+  [nzSuffix]="suffixIconSearch"
+>
+  <input type="text" nz-input placeholder="input search text" />
+</nz-input-group>
+<ng-template #suffixIconSearch>
+  <nz-icon nzType="search" />
+</ng-template>
