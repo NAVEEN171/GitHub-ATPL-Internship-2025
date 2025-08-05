@@ -1,0 +1,9 @@
+<p>number-sequence</p>
+<div class="numbers-list">
+  <div class="number" *ngFor="let number of doubledNumbers">
+    {{ number }}
+  </div>
+</div>
+<button nz-button nzType="primary" (click)="generateSequence()">
+  Generate Sequence
+</button>

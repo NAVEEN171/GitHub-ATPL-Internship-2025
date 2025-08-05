@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div class="left-side-container">
+    <ul nz-list [nzDataSource]="productsItems" nzBordered nzSize="large">
+      <nz-list-header>Header</nz-list-header>
+      @for (item of productsItems;let idx=$index; track item) {
+      <li nz-list-item nzNoFlex>
+        <ul nz-list-item-actions>
+          <nz-list-item-action>
+            <a (click)="fetchSpecificProduct(item.id)">Fetch</a>
+          </nz-list-item-action>
+        </ul>
+        Product {{ item?.id }}
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="right-side-container">
+    <div *ngIf="fetchedProducts.length">
+      <div
+        class="fetched-products"
+        *ngFor="let product of fetchedProducts; let idx = index"
+      >
+        <div class="product-name">Product {{ product.id }}</div>
+        <br />
+        <pre>{{ product | json }}</pre>
+      </div>
+    </div>
+    <div *ngIf="!fetchedProducts.length" class="fallback-text">
+      Fetch Products to see Product Data over here
+    </div>
+    <div *ngIf="!fetchedProducts.length" class="fallback-text">
+      After Fetching multiple products Scroll down to see the Products
+    </div>
+  </div>
+</div>
