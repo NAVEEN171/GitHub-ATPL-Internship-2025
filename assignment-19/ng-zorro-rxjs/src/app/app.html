@@ -1,1 +1,38 @@
-<router-outlet />
+<div class="app-container">
+  <header class="navigation-header">
+    <nav class="nav-buttons">
+      <button
+        class="nav-btn"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Debouncing Task
+      </button>
+
+      <button
+        class="nav-btn"
+        routerLink="/number-sequence"
+        routerLinkActive="active"
+      >
+        Number Sequence
+      </button>
+
+      <button class="nav-btn" routerLink="/table" routerLinkActive="active">
+        Table
+      </button>
+
+      <button class="nav-btn" routerLink="/model" routerLinkActive="active">
+        Model
+      </button>
+
+      <button class="nav-btn" routerLink="/products" routerLinkActive="active">
+        Products List
+      </button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
