@@ -1,7 +1,7 @@
 <div class="main-container">
   <div class="left-side-container">
     <ul nz-list [nzDataSource]="productsItems" nzBordered nzSize="large">
-      <nz-list-header>Header</nz-list-header>
+      <nz-list-header>Products</nz-list-header>
       @for (item of productsItems;let idx=$index; track item) {
       <li nz-list-item nzNoFlex>
         <ul nz-list-item-actions>
