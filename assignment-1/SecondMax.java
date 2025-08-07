@@ -1,6 +1,17 @@
+import java.util.Scanner;
+
 class SecondMax{
     public static void main(String args[]){
-       int[] arr1={15};
+       System.out.print("Enter array size: ");
+        Scanner sc=new Scanner(System.in);
+
+        int len=sc.nextInt();
+        
+        int[] arr1=new int[len];
+        for(int i=0;i<len;i++){
+            System.out.print("Enter number at "+i+": ");
+            arr1[i]=sc.nextInt();
+        }
        int  maxEle=arr1[0];
       int secondMax=Integer.MIN_VALUE;
         if(arr1.length<2){
