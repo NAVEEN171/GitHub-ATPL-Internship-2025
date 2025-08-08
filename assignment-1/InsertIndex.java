@@ -1,38 +1,37 @@
 import java.util.Scanner;
 class InsertIndex{
     public static void main(String args[]){
-        System.out.print("Enter array size: ");
+        System.out.print("Enter inputArray size: ");
         Scanner sc=new Scanner(System.in);
 
         int len=sc.nextInt();
         
-        int[] arr=new int[len];
+        int[] inputArr=new int[len];
         for(int i=0;i<len;i++){
             System.out.print("Enter number at "+i+": ");
-            arr[i]=sc.nextInt();
+            inputArr[i]=sc.nextInt();
         }
-        int arr2[]=new int[arr.length+1];
+        int res[]=new int[inputArr.length+1];
         System.out.println("Enter number to Insert: ");
         int element=sc.nextInt();
        
         System.out.println("position: ");
         int position=sc.nextInt();
-        if(position>arr.length-1){
+        if(position>inputArr.length-1){
             System.out.println("Position is out of bounds");
             System.exit(0);
         }
-        int idx=0;
-        for(int i=idx;i<position;i++){
-            arr2[i]=arr[i];
+    
+        for(int i=0;i<position;i++){
+            res[i]=inputArr[i];
         }
-        System.out.println(idx);
-        arr2[position]=element;
+        res[position]=element;
 
-        for(int i=position;i<arr.length;i++){
-            arr2[i+1]=arr[i];
+        for(int i=position;i<inputArr.length;i++){
+            res[i+1]=inputArr[i];
         }
-        for(int i=0;i<arr2.length;i++){
-            System.out.print(arr2[i]+" ");
+        for(int i=0;i<res.length;i++){
+            System.out.print(res[i]+" ");
         }
 
     }

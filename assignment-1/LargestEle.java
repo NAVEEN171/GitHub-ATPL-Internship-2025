@@ -9,15 +9,15 @@ class LargestEle{
             System.out.println("default value: "+largest);
         }
       
-        int[] arr=new int[inputArr.length];
+        int[] numsArr=new int[inputArr.length];
         for(int i=0;i<inputArr.length;i++){
-                arr[i]=Integer.parseInt(inputArr[i]);
+                numsArr[i]=Integer.parseInt(inputArr[i]);
         }
 
 
-        for(int i=0;i<arr.length;i++){
-               if(arr[i]>largest){
-                largest=arr[i];
+        for(int i=0;i<numsArr.length;i++){
+               if(numsArr[i]>largest){
+                largest=numsArr[i];
                }
         }
         System.out.println(largest);

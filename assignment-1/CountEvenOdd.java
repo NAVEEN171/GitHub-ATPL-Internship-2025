@@ -5,16 +5,16 @@ public class CountEvenOdd{
         System.out.print("Enter array size: ");
         int len=sc.nextInt();
         
-        int[] arr1=new int[len];
+        int[] numsArr=new int[len];
         for(int i=0;i<len;i++){
             System.out.print("Enter number at "+i+": ");
-            arr1[i]=sc.nextInt();
+            numsArr[i]=sc.nextInt();
         }
         int evenNums=0;
         boolean zeroValue=false;
-        for(int i=0;i<arr1.length;i++){
-            if(arr1[i]%2==0){
-                if(arr1[i]==0){
+        for(int i=0;i<numsArr.length;i++){
+            if(numsArr[i]%2==0){
+                if(numsArr[i]==0){
                     zeroValue=true;
                 }
                 else{
@@ -22,6 +22,6 @@ public class CountEvenOdd{
                 }
             }
         }
-        System.out.println("evenNums "+evenNums+" oddNums "+(arr1.length-evenNums-(zeroValue?1:0)));
+        System.out.println("evenNums "+evenNums+" oddNums "+(numsArr.length-evenNums-(zeroValue?1:0)));
     }
 }
