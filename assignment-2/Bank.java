@@ -28,10 +28,8 @@ public class Bank {
         if(balance<amountToWithdraw){
             System.out.println("Insufficient Balance");
         }
-        else if(balance-500<amountToWithdraw){
-          
-            System.out.println("Min balance of "+this.minBalance+" should be maintained in your account");
-
+        else if(balance-amountToWithdraw<500){
+            System.out.println("Minimum balance of "+this.minBalance+" should be maintained in your account");
         }
         else{
             this.balance=this.balance-amountToWithdraw;
