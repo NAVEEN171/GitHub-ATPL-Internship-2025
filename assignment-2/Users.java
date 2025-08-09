@@ -14,9 +14,7 @@ class UserProfile{
     private String userName;
     private String password;
     private String email;
-   UserProfile(){
    
-   }
 
    public String getPassword(){
         return this.password!=null?password:"";
