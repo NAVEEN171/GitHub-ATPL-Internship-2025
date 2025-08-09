@@ -1,3 +1,4 @@
+package constructors;
 public class LaptopStore {
     public static void main(String args[]){
         Laptop laptop1=new Laptop("HP", 16, "Ryzen i5 core"); 

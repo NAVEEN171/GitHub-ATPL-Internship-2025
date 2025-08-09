@@ -1,3 +1,4 @@
+package encapsulation;
 public class Users {
     public static void main(String args[]){
         UserProfile user=new UserProfile();

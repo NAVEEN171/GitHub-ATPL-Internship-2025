@@ -1,3 +1,4 @@
+package constructors;
 public class Flights {
     public static void main(String args[]){
     Flight flight1=new Flight(123,"Chennai",4);

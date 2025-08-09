@@ -1,3 +1,4 @@
+package polyMorphism;
 public class DisplayVariables {
     public static void main(String args[]){
         Display display1=new Display();
@@ -17,7 +18,7 @@ class Display{
     }
     void show(int[] arr){
         for(int idx=0;idx<arr.length;idx++){
-              System.out.println("index : "+arr[idx]);
+              System.out.println("element : "+arr[idx]);
         }
     }
 }

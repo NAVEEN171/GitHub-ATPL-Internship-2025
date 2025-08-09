@@ -1,3 +1,4 @@
+package abstraction;
 public class AppilancesAbstract {
     public static void main(String args[]){
         Fan f1=new Fan();

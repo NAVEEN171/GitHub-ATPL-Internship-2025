@@ -1,3 +1,4 @@
+package inheritance;
  enum Role{
     STUDENT,
     TEACHER,

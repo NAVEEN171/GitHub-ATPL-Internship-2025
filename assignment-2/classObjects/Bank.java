@@ -1,3 +1,4 @@
+package classObjects;
 public class Bank {
       public static void main(String args[]){
         BankAccount acc1=new BankAccount(5000);
