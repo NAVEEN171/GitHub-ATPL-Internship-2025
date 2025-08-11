@@ -23,6 +23,7 @@ class FrequencyCount{
         }
         for(int i:numsCount.keySet()){
             System.out.println("key: "+i+" "+"Value "+numsCount.get(i));
-        }   
+        }  
+         sc.close(); 
     }
 }

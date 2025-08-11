@@ -23,5 +23,6 @@ public class CountEvenOdd{
             }
         }
         System.out.println("evenNums "+evenNums+" oddNums "+(numsArr.length-evenNums-(zeroValue?1:0)));
+         sc.close();
     }
 }

@@ -9,10 +9,13 @@ public class Flights {
 }
 
 class Flight{
-   int flightNo=145;
-   String destination="Mumbai";
-   int duration=5;
+   int flightNo;
+   String destination;
+   int duration;
    Flight(){
+       flightNo=145;
+       destination="Mumbai";
+       duration=5;
    }
    Flight(int flightNo,String destination,int duration){
        this.flightNo=flightNo;

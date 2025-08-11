@@ -2,7 +2,7 @@
 package anotherPackage;
 import accessModifiers.TestCls; 
 //import accessModifiers.Book;
-//During import it says book is not visible since it is a diffeeent package and we are using default class for book
+//During import it says book is not visible since it is a different package and we are using default class for book
 
 
 public class DiffPkg {

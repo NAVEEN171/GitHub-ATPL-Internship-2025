@@ -22,6 +22,6 @@ class LargestEle{
         }
         System.out.println(largest);
 
-        
+         sc.close();
     }
 }

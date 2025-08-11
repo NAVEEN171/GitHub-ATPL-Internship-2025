@@ -33,6 +33,6 @@ class InsertIndex{
         for(int i=0;i<res.length;i++){
             System.out.print(res[i]+" ");
         }
-
+          sc.close();
     }
 }

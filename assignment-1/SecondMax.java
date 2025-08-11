@@ -30,6 +30,7 @@ class secondMaxNum{
             }
         }
         System.out.println("Second max is "+secondMaxNum);
+        sc.close();
 
     }
 }
