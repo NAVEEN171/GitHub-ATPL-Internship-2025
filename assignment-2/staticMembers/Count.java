@@ -12,7 +12,10 @@ public class Count {
         Counter c1=new Counter();
         Counter c2=new Counter();
         System.out.println("count : "+c1.count);
-        System.out.println("count : "+c2.count);
-
+        System.out.println("count : "+c2.count);     
+       
     }
 }
+
+
+
