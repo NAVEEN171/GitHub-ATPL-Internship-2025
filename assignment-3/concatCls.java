@@ -6,7 +6,6 @@ public class ConcatCls {
     }
     public static void main(String[] args) {
         long initialStartime=System.nanoTime();
-        System.out.println(System.nanoTime());
         String str1="Hello";
     
        
