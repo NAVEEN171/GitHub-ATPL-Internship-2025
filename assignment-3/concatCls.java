@@ -1,5 +1,5 @@
 import java.io.*;
-public class concatCls {
+public class ConcatCls {
 
     static double convertToSeconds(long startTime,long endTime){
         return (endTime-startTime)/(Math.pow(10,-9));

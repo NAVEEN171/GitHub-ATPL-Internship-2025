@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.io.*;
 
-public class reverseCls {
+public class ReverseCls {
        public static void main(String[] args) {
                 String originalString;
                 Scanner sc=new Scanner(System.in);
