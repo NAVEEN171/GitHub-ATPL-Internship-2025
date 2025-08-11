@@ -19,7 +19,7 @@ package classObjects;
        void showBookDetails(){
            System.out.println("BookName : "+this.title);
            System.out.println("author : "+this.author);
-           System.out.println("origialPrice : "+this.originalPrice);
+           System.out.println("originalPrice : "+this.originalPrice);
            System.out.println("price: "+this.price);
 
        }
