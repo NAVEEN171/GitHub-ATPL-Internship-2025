@@ -16,12 +16,14 @@ class ProcessPayment{
 }
 
 class CreditCardPayment extends ProcessPayment{
+    @Override
     void processPayment(){
         System.out.println("Processing Payment Through Credit Card...");
     }
     
 }
 class UPIPayment extends ProcessPayment{
+    @Override
     void processPayment(){
         System.out.println("Processing Payment Through UPI");
     }

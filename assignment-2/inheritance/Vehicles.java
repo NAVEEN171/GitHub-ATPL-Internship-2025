@@ -23,6 +23,7 @@ class Bike extends Vehicle{
      Bike(String vhType){
         super(vhType);
      }
+     @Override
      void startVehicle(){
         System.out.println("Bike Started!");
           System.out.println(vhType);
@@ -33,6 +34,7 @@ class Car extends Vehicle{
      Car(String vhType){
         super(vhType);
      }
+     @Override
      void startVehicle(){
         System.out.println("Car Started!");
         System.out.println(vhType);

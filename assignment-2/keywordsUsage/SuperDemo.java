@@ -19,6 +19,7 @@ class Employee{
 }
 
 class Intern extends Employee{
+    @Override
     public void setEmpType(String empType){
             this.empType="INTERN";
     }

@@ -16,16 +16,19 @@ class Animal{
     }
 }
 class Cow extends Animal{
+    @Override
     void makeSound(){
         System.out.println("moo moo moo ");
     }
 }
 class Dog extends Animal{
+    @Override
     void makeSound(){
         System.out.println("bow bow bow");
     }
 }
 class Cat extends Animal{
+    @Override
     void makeSound(){
         System.out.println("meow meow");
     }
