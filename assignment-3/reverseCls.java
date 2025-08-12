@@ -13,7 +13,7 @@ public class ReverseCls {
                 }
                 StringBuffer str1=new StringBuffer(originalString);
                 StringBuilder str2=new StringBuilder(originalString);
-                // System.out.println(originalString);
+             
                 System.out.println("Manual reverse:");
                 System.out.println(revString);
                 System.out.println("using string buffer: ");

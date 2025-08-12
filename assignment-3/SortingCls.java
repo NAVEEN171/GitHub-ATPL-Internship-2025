@@ -7,15 +7,15 @@ public class SortingCls {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter len of array: ");
         int len=sc.nextInt();
-        String[] arr=new String[len];
+        String[] inputArr=new String[len];
         for(int i=0;i<len;i++){
-            arr[i]=sc.next();
+            inputArr[i]=sc.next();
         }
 
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
-        Arrays.sort(arr,Collections.reverseOrder());
-         System.out.println(Arrays.toString(arr));
+        Arrays.sort(inputArr);
+        System.out.println("sorted array in ascending order : "+Arrays.toString(inputArr));
+        Arrays.sort(inputArr,Collections.reverseOrder());
+         System.out.println("sorted array in descending order : "+Arrays.toString(inputArr));
          sc.close();
     }
     

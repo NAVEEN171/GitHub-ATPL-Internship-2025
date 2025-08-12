@@ -2,7 +2,7 @@ import java.io.*;
 public class ConcatCls {
 
     static double convertToSeconds(long startTime,long endTime){
-        return (endTime-startTime)/(Math.pow(10,-9));
+        return  (endTime-startTime)/(Math.pow(10,-9));
     }
     public static void main(String[] args) {
         long initialStartime=System.nanoTime();
