@@ -12,7 +12,6 @@ public class StringMethods {
     System.out.println( "replaced all the occurances of target value ' ' with replacement value of - : " + str.replace(" ", "-"));
     System.out.println("generated a substring from 2 to 6 index : " + str.substring(2, 6));
     System.out.println("searching for first occurance of a  : " + str.indexOf('a'));
-
   }
 
 }
