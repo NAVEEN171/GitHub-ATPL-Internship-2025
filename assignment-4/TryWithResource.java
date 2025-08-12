@@ -12,6 +12,8 @@ public class TryWithResource {
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -14,5 +14,6 @@ public class IllegalArgumentExpectionDemo {
             System.out.println("Some thing went worng");
             System.out.println(e);
         }
+        sc.close();
     }
 }

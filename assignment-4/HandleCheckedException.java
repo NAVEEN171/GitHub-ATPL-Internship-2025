@@ -12,6 +12,7 @@ public class HandleCheckedException {
             while ((ch = f1.read()) != -1) {
                 System.out.println(" " + (char) ch);
             }
+            f1.close();
         } catch (FileNotFoundException e) {
             System.out.println(e);
         } catch (IOException e) {
