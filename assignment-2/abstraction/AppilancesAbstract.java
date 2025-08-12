@@ -1,57 +1,63 @@
 package abstraction;
+
 public class AppilancesAbstract {
-    public static void main(String args[]){
-        Fan f1=new Fan();
+    public static void main(String args[]) {
+        Fan f1 = new Fan();
         f1.turnOn();
         f1.isTurnedOn();
         f1.turnOff();
         f1.isTurnedOn();
-        Tv t1=new Tv();
+        Tv t1 = new Tv();
         t1.turnOn();
-        
+
         t1.isTurnedOn();
         t1.turnOff();
         t1.isTurnedOn();
     }
-     
+
 }
 
-abstract class Appliance{
-      abstract void turnOff();
-      abstract void turnOn();
+abstract class Appliance {
+    abstract void turnOff();
+
+    abstract void turnOn();
 }
 
-class Fan extends Appliance{
-   private boolean turnedOn=false;
+class Fan extends Appliance {
+    private boolean turnedOn = false;
+
     void turnOff() {
-        turnedOn=false;  
+        turnedOn = false;
     }
-    void turnOn(){
-        turnedOn=true;
+
+    void turnOn() {
+        turnedOn = true;
     }
-   public void isTurnedOn(){
-        if(turnedOn){
+
+    public void isTurnedOn() {
+        if (turnedOn) {
             System.out.println("Fan is turned on");
-        }
-        else{
+        } else {
             System.out.println("Fan is turned off");
         }
     }
 }
 
-class Tv extends Appliance{
-   private boolean turnedOn=false;
+class Tv extends Appliance {
+    private boolean turnedOn = false;
+
     void turnOff() {
-        turnedOn=false;  
+        turnedOn = false;
     }
-    void turnOn(){
-        turnedOn=true;
+
+    void turnOn() {
+        turnedOn = true;
     }
-   public void isTurnedOn(){
-        if(turnedOn){
+
+    public void isTurnedOn() {
+        if (turnedOn) {
             System.out.println("Tv is turned on");
-        }
-        else{
+        } else {
             System.out.println("Tv is turned off");
         }
     }
