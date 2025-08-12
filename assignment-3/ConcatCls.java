@@ -12,11 +12,13 @@ public class ConcatCls {
         str1=str1+" harry";
         System.out.println("Normal string appending...");
         System.out.println(convertToSeconds(initialStartime,System.nanoTime())+"seconds");
+
         initialStartime=System.nanoTime();
-        System.out.println("String Buffer...");
+        System.out.println("String Buffer ...");
         StringBuffer str2=new StringBuffer("hello");
         str2.append("harry");
         System.out.println(convertToSeconds(initialStartime,System.nanoTime())+"seconds");
+
         initialStartime=System.nanoTime();
          System.out.println("String Builder...");
         StringBuilder str3=new StringBuilder("hello");
