@@ -6,6 +6,7 @@ public class IllegalArgumentExpectionDemo {
         Scanner sc = new Scanner(System.in);
 
         try {
+            System.out.print("Enter a Value: ");
             int val = sc.nextInt();
             if (val < 0) {
                 throw new IllegalArgumentException("Number Cannot be negative");
