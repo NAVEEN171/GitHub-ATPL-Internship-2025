@@ -1,3 +1,5 @@
+package customException;
+
 import java.util.Scanner;
 
 class LoginExceptionFailed extends RuntimeException {
@@ -11,7 +13,7 @@ public class LoginException {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter userName : ");
         String userName = sc.next();
-        System.out.println("Enter Password : ");
+        System.out.print("Enter Password : ");
         String password = sc.next();
         try {
             throw new LoginExceptionFailed("Invalid credentials or user doesn't Exist");

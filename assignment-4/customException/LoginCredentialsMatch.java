@@ -1,3 +1,5 @@
+package customException;
+
 import java.util.Scanner;
 
 class LoginExceptionFailed extends RuntimeException {
