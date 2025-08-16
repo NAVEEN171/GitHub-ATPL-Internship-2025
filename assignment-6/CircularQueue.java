@@ -24,7 +24,7 @@ public class CircularQueue {
             }
             else{
                 circularList[nextIndex]=num;
-                rear++;
+                rear=nextIndex;
             }
 
         }
