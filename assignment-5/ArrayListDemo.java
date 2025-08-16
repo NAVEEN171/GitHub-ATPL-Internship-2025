@@ -17,6 +17,7 @@ public class ArrayListDemo {
         System.out.println("After Removing element 3...");
         for(String s:strArr){
             System.out.println(s);
+            System.out.println(strArr.size());
         }
       }
 }
