@@ -88,7 +88,7 @@ public class PhoneDirectory {
         Scanner sc=new Scanner(System.in);
 
         while(loop){
-            System.out.println("Select an Option \n 1:AddContact \n 2:RemoveContact \n 3:SearchByNumber \n 4:SearchByName \n 5:PrintContacts");
+            System.out.println("Select an Option \n 1:AddContact \n 2:RemoveContact \n 3:SearchByNumber \n 4:SearchByName \n 5:PrintContacts \n 6:Exit");
             System.out.println("\n **Note:- Please add contacts first** \n");
             option=sc.nextInt();
             switch(option){
@@ -117,8 +117,12 @@ public class PhoneDirectory {
                 case 5:
                   logContactDetails(contactDetails);
                   break;
+                case 6:
+                  loop=false;
+                  break;
+                  
                 default:
-                  System.out.println("Enter a valid Number betwen 1-5 !");
+                  System.out.println("Enter a valid Number betwen 1-6 !");
 
                   
             }
