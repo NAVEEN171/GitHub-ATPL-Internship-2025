@@ -13,7 +13,7 @@ public class CircularQueue {
     }
 
     public void enqueue(int num) {
-        System.out.println(rear + " " + front);
+
         if (rear == -1 && front == -1) {
             front = 0;
             circularList[++rear] = num;
