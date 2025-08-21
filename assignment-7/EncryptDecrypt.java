@@ -10,8 +10,7 @@ public class EncryptDecrypt {
         String temp = "";
         for (int i = 0; i < original.length(); i++) {
             int num = original.charAt(i);
-            System.out.println(original.charAt(i)
-                    + " " + num);
+
             num = (num + 5);
 
             temp += String.valueOf(num) + "\n";
