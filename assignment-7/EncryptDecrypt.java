@@ -43,6 +43,8 @@ public class EncryptDecrypt {
                 decrytedMessage += s;
 
             }
+            fr.close();
+            br.close();
             System.out.println("Decrypted message is " + decrytedMessage);
 
         } catch (IOException e) {

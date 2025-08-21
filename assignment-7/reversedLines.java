@@ -7,7 +7,7 @@ import java.io.IOException;
 public class reversedLines {
     public static String reverseString(String originalStr) {
         String temp = "";
-        for (int i = originalStr.length() - 1; i > 0; i--) {
+        for (int i = originalStr.length() - 1; i >= 0; i--) {
             temp = temp + originalStr.charAt(i);
         }
         return temp;
@@ -28,7 +28,6 @@ public class reversedLines {
             br.close();
             fr.close();
             fw.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
