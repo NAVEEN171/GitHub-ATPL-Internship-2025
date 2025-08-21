@@ -1,0 +1,5 @@
+Hello Hello Hi How are You Fine Today
+How Was Your Day 
+My Day Went Fine About You
+This is not a Good Time to Talk About that
+About:2 How:2 Hello:2 Fine:2 Day:2 You:2 Hi:1 a:1 Was:1 is:1 Time:1 Talk:1 My:1 that:1 Today:1 not:1 are:1 Your:1 This:1 to:1 Good:1 Went:1 

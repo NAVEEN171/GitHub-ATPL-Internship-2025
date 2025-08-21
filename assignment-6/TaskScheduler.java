@@ -25,7 +25,16 @@ public class TaskScheduler {
 
     }
 
+    public void updateTask(String task, ArrayList<String> strArr) {
+        if (tasks.containsKey(task) && strArr.size() > 0) {
+            tasks.put(task, new LinkedList<>(strArr));
+        } else {
+            System.out.println("task not found ! ");
+        }
+    }
+
     public void Removetask(String task) {
+
         if (tasks.containsKey(task)) {
             tasks.remove(task);
         } else {
@@ -43,6 +52,8 @@ public class TaskScheduler {
         ts.Removetask("Thursday");
         ts.printTasks();
         ts.Removetask("Monday");
+        ts.printTasks();
+        ts.updateTask("Wednesday", new ArrayList<>(Arrays.asList("Have breakfast")));
         ts.printTasks();
 
     }
