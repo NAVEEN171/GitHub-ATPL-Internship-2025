@@ -32,7 +32,6 @@ public class EncryptDecrypt {
             bw.write(encryptedCode);
             bw.close();
             fw.close();
-
             FileReader fr = new FileReader("./assignment-7/decrypt.txt");
             BufferedReader br = new BufferedReader(fr);
             String Line;
@@ -41,15 +40,12 @@ public class EncryptDecrypt {
                 int st = Integer.valueOf(Line);
                 char s = (char) (st - 5);
                 decrytedMessage += s;
-
             }
             fr.close();
             br.close();
             System.out.println("Decrypted message is " + decrytedMessage);
-
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 }
