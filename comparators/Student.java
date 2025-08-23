@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.*;
 
 public class Student {
     String name;
@@ -42,9 +43,11 @@ public class Student {
         printList(studentsList);
 
         Collections.sort(studentsList,new ConditionSorter());
-        System.out.println("Sorting with two conditions");
+        System.out.println("Sorting with two conditions (custom comparator)");
         printList(studentsList);
-
+        System.out.println("using then comparing ..");
+        studentsList.sort(Comparator.comparingInt((Student s)->s.marks).reversed().thenComparing(s->s.name));
+        printList(studentsList);
 
     }
 }
