@@ -12,6 +12,8 @@ create table Department_Naveen(
     dept_name varchar(50),
     primary key(dept_id)
 );
+show tables;
+drop table accounts_mahesh;
 
 describe Department_Naveen;
 
@@ -23,6 +25,10 @@ modify  dept_id varchar(20) NOT NULL;
 insert into Department_Naveen values("D1","Computer Science"),("D2","Mathematics"),("D3","Physics");
 insert into Department_Naveen values("D4","Social");
 select * from Department_Naveen;
+
+update courses_Naveen
+set dept_id="D1"
+where course_id="C2";
 
 
 create table courses_Naveen(
@@ -50,6 +56,8 @@ create table students_Naveen(
     foreign key  (dept_id) references Department_Naveen(dept_id)
 );
 
+show tables;
+
 
 insert into students_Naveen(student_id,student_name,dob,age,dept_id) values("S1","Abdul","2002-04-06",24,"D1");
 
@@ -66,6 +74,9 @@ alter table courses_Naveen
 add column duration int default 8;
 
 select * from courses_Naveen;
+
+alter table courses_Naveen
+ADD unique (course_code);
 
 
 update students
@@ -134,8 +145,8 @@ start TRANSACTION;
 
 update accounts_Naveen
 set balance=balance-1000
- where account_id="34324E";
- savepoint after_debut;
+where account_id="34324E";
+savepoint after_debut;
  
 update accounts_Naveen 
 set balance=balance+1000
@@ -149,3 +160,116 @@ where account_id="23141E";
 rollback to after_debut;
 
 commit;
+
+describe students_Naveen;
+
+describe Department_Naveen;
+
+select stu.student_name ,dept.dept_name as department_name
+from students_Naveen as stu
+join Department_Naveen as dept
+on dept.dept_id=stu.dept_id;
+
+select *
+from students_Naveen as studs
+where studs.age >(
+select avg(age) 
+from Department_Naveen  
+group by dept_id
+having studs.dept_id=dept_id );
+
+
+
+with countstudentsperdepartment as(
+select count(*) as no_of_students,dept.dept_name 
+from Department_Naveen as dept 
+left join students_Naveen  as stu
+on dept.dept_id=stu.dept_id
+group by dept.dept_id
+)
+select * from countstudentsperdepartment;
+
+select * from courses_Naveen;
+
+alter table courses_Naveen
+add column course_code varchar(20);
+
+select * from courses_Naveen;
+
+update courses_Naveen
+set course_code="CS101"
+where course_id="C1";
+
+update courses_Naveen
+set course_code="CS102"
+where course_id="C2";
+
+
+update courses_Naveen
+set course_code="Math103"
+where course_id="C3";
+
+
+update courses_Naveen
+set course_code="Math104"
+where course_id="C4";
+
+update courses_Naveen
+set course_code="Physics101"
+where course_id="C5";
+
+describe students_Naveen;
+
+insert into courses_Naveen values("C6","OOPS through java","D1",5,"CS103");
+insert into courses_Naveen values("C6","DSA","D1",16,"CS103");
+
+
+
+select * from courses_Naveen;
+describe courses_Naveen;
+
+
+alter table courses_Naveen
+add column credits int ;
+
+ALTER TABLE courses_Naveen
+ADD CONSTRAINT CHK_PersonAge CHECK (credits<=5 AND credits>=1);
+
+
+update courses_Naveen
+set credits=6
+where course_id="C1";
+
+update courses_Naveen
+set credits=4
+where course_id="C1";
+
+alter table courses_Naveen
+add constraint FK_courses_departments
+foreign key (dept_id) references Department_Naveen(dept_id);
+
+create or replace view studs_depts_details as 
+select sn.student_name,dn.dept_name
+from students_Naveen as sn
+left join Department_Naveen as dn 
+on sn.dept_id=dn.dept_id;
+
+select * from studs_depts_details;
+
+update studs_depts_details
+set student_name="jadeja"
+where student_name="Abdul";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
