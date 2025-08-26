@@ -1,0 +1,12 @@
+
+# Compiled output
+.metadata
+/jdbcassignment/bin
+/jdbcassignment/.classpath
+/jdbcassignment/.project
+/jdbcassignment/.settings
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+.db
