@@ -255,7 +255,6 @@ left join Department_Naveen as dn
 on sn.dept_id=dn.dept_id;
 
 select * from studs_depts_details;
-
 update studs_depts_details
 set student_name="jadeja"
 where student_name="Abdul";
