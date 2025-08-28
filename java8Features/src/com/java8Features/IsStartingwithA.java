@@ -1,6 +1,6 @@
 package com.java8Features;
 
-
- interface IsStartingwithA {
-           public boolean isStartingWithLetter(String a,String str);
+@FunctionalInterface
+interface IsStartingwithA {
+    public boolean isStartingWithLetter(String a, String str);
 }
