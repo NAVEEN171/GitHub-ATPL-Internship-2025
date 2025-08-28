@@ -1,13 +1,11 @@
 package com.java8Features;
 
 import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.Scanner;
 
 public class GetDayOfSpecifiedDate {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         int year;
         int month;
         int day;
