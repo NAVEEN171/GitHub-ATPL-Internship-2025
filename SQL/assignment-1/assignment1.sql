@@ -187,6 +187,8 @@ left join students_Naveen  as stu
 on dept.dept_id=stu.dept_id
 group by dept.dept_id
 )
+
+
 select * from countstudentsperdepartment;
 
 select * from courses_Naveen;
