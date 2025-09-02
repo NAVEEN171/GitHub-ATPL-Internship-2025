@@ -1,0 +1,26 @@
+export const leetcodeTheme = {
+  base: 'vs-dark',
+  inherit: true,
+  rules: [
+    { token: 'comment', foreground: '#586e75', fontStyle: 'italic' },
+    { token: 'keyword', foreground: '#b58900', fontStyle: 'bold' },
+    { token: 'number', foreground: '#2aa198' },
+    { token: 'string', foreground: '#859900' },
+    { token: 'variable', foreground: '#268bd2' },
+    { token: 'function', foreground: '#cb4b16' },
+    { token: 'type', foreground: '#6c71c4' },
+    { token: 'operator', foreground: '#dc322f' },
+  ],
+  colors: {
+    'editor.foreground': '#93a1a1',
+    'editor.background': '#001f27',
+    'editor.selectionBackground': '#07364288',
+    'editor.lineHighlightBackground': '#07364255',
+    'editorCursor.foreground': '#d33682',
+    'editorWhitespace.foreground': '#073642',
+    'editorIndentGuide.background': '#073642',
+    'editorIndentGuide.activeBackground': '#586e75',
+    'editorLineNumber.foreground': '#586e75',
+    'editorLineNumber.activeForeground': '#93a1a1',
+  },
+};
