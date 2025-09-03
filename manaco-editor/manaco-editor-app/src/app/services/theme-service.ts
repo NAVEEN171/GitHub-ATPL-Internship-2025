@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ThemeService {
   private currentTheme: string = 'lightTheme';
+
   setTheme() {
     if (this.currentTheme === 'lightTheme') {
       (window as any).monaco.editor.setTheme('leetcodeTheme');
@@ -14,7 +15,7 @@ export class ThemeService {
       this.currentTheme = 'lightTheme';
     }
   }
-  ApplyIntialtheme(theme: 'lightTheme' | 'leetcodeTheme') {
-    (window as any).monaco.editor.setTheme(theme);
+  getDefaultTheme(): string {
+    return 'lightTheme';
   }
 }

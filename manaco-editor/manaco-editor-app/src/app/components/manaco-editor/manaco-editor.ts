@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { ThemeService } from '../../services/theme-service';
+
 interface monacoEditorType {
   language: string;
   automaticLayout: boolean;
@@ -12,7 +13,7 @@ interface monacoEditorType {
   templateUrl: './manaco-editor.html',
   styleUrl: './manaco-editor.css',
 })
-export class ManacoEditor implements OnInit {
+export class ManacoEditor {
   editorOptions: monacoEditorType = {
     language: 'cpp',
     automaticLayout: true,
@@ -24,15 +25,15 @@ export class ManacoEditor implements OnInit {
     this.applyTheme.setTheme();
   }
 
+  onEditorInit(editor: any) {
+    (window as any).monaco.editor.setTheme(this.applyTheme.getDefaultTheme());
+  }
+
   changeEditorOptions(currentLanguage: string) {
     if (this.editorOptions.language !== currentLanguage) {
       this.editorOptions = { ...this.editorOptions, language: currentLanguage };
       this.code = '';
     }
-  }
-
-  ngOnInit(): void {
-    this.applyTheme.ApplyIntialtheme('lightTheme');
   }
 
   code = `

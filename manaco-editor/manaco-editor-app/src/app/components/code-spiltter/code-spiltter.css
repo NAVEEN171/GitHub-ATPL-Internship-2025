@@ -1,0 +1,146 @@
+::ng-deep .p-splitter {
+  @apply border-0 rounded-lg overflow-hidden;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Horizontal splitter gutter (between left and right panels) */
+::ng-deep .p-splitter-gutter {
+  background: linear-gradient(to right, #d1d5db, #9ca3af, #d1d5db) !important;
+  border: 1px solid #9ca3af !important;
+  width: 8px !important;
+  position: relative;
+  cursor: col-resize !important;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+}
+
+::ng-deep .p-splitter-gutter:hover {
+  background: linear-gradient(to right, #3b82f6, #2563eb, #3b82f6) !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Vertical splitter gutter (between top and bottom right panels) */
+::ng-deep .p-splitter[data-pc-section="root"] .p-splitter .p-splitter-gutter {
+  background: linear-gradient(to bottom, #d1d5db, #9ca3af, #d1d5db) !important;
+  border: 1px solid #9ca3af !important;
+  height: 8px !important;
+  width: auto !important;
+  cursor: row-resize !important;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+}
+
+::ng-deep
+  .p-splitter[data-pc-section="root"]
+  .p-splitter
+  .p-splitter-gutter:hover {
+  background: linear-gradient(to bottom, #3b82f6, #2563eb, #3b82f6) !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Splitter handle (the grip lines) */
+::ng-deep .p-splitter-gutter-handle {
+  background: #6b7280 !important;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+::ng-deep .p-splitter-gutter:hover .p-splitter-gutter-handle {
+  background: #ffffff !important;
+}
+
+/* Add grip dots to make it more obvious */
+::ng-deep .p-splitter-gutter::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 20px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #6b7280 0px,
+    #6b7280 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Vertical splitter grip dots */
+::ng-deep
+  .p-splitter[data-pc-section="root"]
+  .p-splitter
+  .p-splitter-gutter::before {
+  width: 20px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #6b7280 0px,
+    #6b7280 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+/* Change grip dots color on hover */
+::ng-deep .p-splitter-gutter:hover::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0px,
+    #ffffff 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+::ng-deep
+  .p-splitter[data-pc-section="root"]
+  .p-splitter
+  .p-splitter-gutter:hover::before {
+  background: repeating-linear-gradient(
+    to right,
+    #ffffff 0px,
+    #ffffff 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+/* Animation for smooth transitions */
+::ng-deep .p-splitter-panel {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Monaco editor integration */
+app-manaco-editor {
+  @apply w-full h-full block;
+}
+
+/* Smooth transitions */
+.transition-colors {
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Code blocks */
+code {
+  font-family: "Fira Code", "Monaco", "Cascadia Code", "Ubuntu Mono", monospace;
+}
+
+/* Status badges with different states */
+.status-passed {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-failed {
+  @apply bg-red-100 text-red-800;
+}
+
+.status-pending {
+  @apply bg-yellow-100 text-yellow-800;
+}

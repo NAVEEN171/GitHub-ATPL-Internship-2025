@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ManacoEditor } from './components/manaco-editor/manaco-editor';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ManacoEditor],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
