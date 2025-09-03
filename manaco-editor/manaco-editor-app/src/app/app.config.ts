@@ -5,12 +5,12 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { leetcodeTheme } from './leetcodeTheme';
+import { lightTheme } from './lightTheme';
 
 const monacoConfig: NgxMonacoEditorConfig = {
   onMonacoLoad: () => {
-    console.log('I am running');
     (window as any).monaco.editor.defineTheme('leetcodeTheme', leetcodeTheme);
-    (window as any).monaco.editor.setTheme('leetcodeTheme');
+    (window as any).monaco.editor.defineTheme('lightTheme', lightTheme);
   },
 };
 import { routes } from './app.routes';

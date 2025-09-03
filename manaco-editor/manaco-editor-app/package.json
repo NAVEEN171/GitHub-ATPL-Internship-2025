@@ -44,5 +44,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.2"
+  },
+  "overrides": {
+    "ngx-monaco-editor-v2": {
+      "@angular/common": "20.0.0"
+    }
   }
 }
